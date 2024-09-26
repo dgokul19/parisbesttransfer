@@ -4,8 +4,10 @@ import NavigationMenu from "./components/Navbar";
 import HomeBanner from "./components/HomeBanner";
 import AboutSection from "./components/AboutSection";
 import CabServices from "./components/Services";
+import TestimonialSection from "./components/TestimonialSection";
+import FooterComponent from "./components/Footer";
 
-// CSS
+
 import classes from "./page.module.css";
 
 export default function Home() {
@@ -15,6 +17,8 @@ export default function Home() {
         <HomeBanner />
         <AboutSection />
         <CabServices />
+        <TestimonialSection />
+        <FooterComponent />
     </div>
   );
 }

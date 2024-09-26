@@ -21,7 +21,7 @@ const CabServices = () => {
 
                         <div className={classes.servicesRow}>
                             {
-                                SERVICES_DATA.map(list => <ServiceBox list={list}/>)
+                                SERVICES_DATA.map(list => <ServiceBox key={list.id} list={list}/>)
                             }
                         </div>
                     </div>
