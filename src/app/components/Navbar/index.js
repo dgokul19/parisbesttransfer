@@ -3,7 +3,8 @@ import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import classes from "../index.module.scss";
+// CSS
+import classes from "../../Css/index.module.scss";
 
 import Logo from "../../assets/PBT-White-Logo-150x224.png";
 

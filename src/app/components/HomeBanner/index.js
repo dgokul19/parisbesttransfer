@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 // CSS
-import classes from "../index.module.scss";
+import classes from "../../Css/index.module.scss";
 
 // Images
 import Banner from "../../assets/banner-car-1.png";

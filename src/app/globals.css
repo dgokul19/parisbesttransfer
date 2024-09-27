@@ -2,7 +2,7 @@
 :root {
   --white: #ffffff;
   --black: #171717;
-  --primary: #FC4F00;
+  --primary: #ffa000;
   --dirty-white : #F4F5F8;
 }
 
@@ -49,4 +49,13 @@ img {
 }
 .relative {
   position: relative !important;
+}
+
+
+/* Media Query Mobile [ Max 480px / Min 320px ] */
+
+@media only screen and (max-width: 480px) {
+    .container {
+        width: 96% !important;
+    }
 }

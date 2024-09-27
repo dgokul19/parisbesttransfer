@@ -6,7 +6,7 @@ import ServiceBox from "./ServiceBox";
 import { SERVICES_DATA } from "../../constatnts/services";
 
 //CSS
-import classes from "../index.module.scss";
+import classes from "../../Css/index.module.scss";
 
 const CabServices = () => {
     return (
