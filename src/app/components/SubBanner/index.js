@@ -1,5 +1,5 @@
 // CSS
-import classes from "../../css/index.module.scss";
+import classes from "../../styles/index.module.scss";
 
 const SubBanner = ({title, route}) => {
     return (
