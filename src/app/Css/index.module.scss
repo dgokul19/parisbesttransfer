@@ -750,6 +750,108 @@
 
 }
 
+    // Package Tours 
+.packageServicesLayer{
+    padding: 5rem 0;
+    background-color: var(--dirty-white);
+    & > div {
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        h3{
+            font-size: 2rem;
+            text-transform: capitalize;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--primary);
+            margin-bottom: 0px;
+        }
+        p{
+            width: 85%;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+    .parisPackageSectn{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 2rem;
+        .packageBx{
+            max-width: 340px;
+            flex: 1;
+            height: 600px;
+            background-image: url('../assets/services-1.jpg');
+            background-size: cover;
+            background-position: center center;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            gap: .75rem;
+            &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, .50);
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            &:nth-child(2){
+                background-image: url('../assets/services-2.jpg');
+            }
+            &:nth-child(3){
+                background-image: url('../assets/services-3.jpg');
+                background-position: center center;
+            }
+            & > *{
+                position: relative;
+                z-index: 1;
+                color: var(--dirty-white);
+            }
+            h3{
+                font-size: 1.5rem;
+            }
+            p{
+                text-align: left;
+                margin: 0;
+                width: 100%;
+            }
+            .priceElem{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                label {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 3rem;
+                    font-weight: 700;
+                }
+            }
+            
+            button {
+                height: 45px;
+                max-width: 200px;
+                line-height: 45px;
+                background-color: var(--primary);
+                color: var(--white);
+                border: transparent;
+                min-width: 150px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+
 
 // Footer 
 
@@ -825,6 +927,51 @@
         }
     }
 }
+
+// Form Field Components
+
+
+// Sub Pages 
+// Booking Page
+
+.subPageBannerBg{
+    width: 100%;
+    height: 320px;
+    background-image: url('../assets/paris-city.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--black);
+    background-blend-mode: overlay;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--dirty-white);
+    h2{
+        font-size: 3rem;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Mobile Responsive Content */
 

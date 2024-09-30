@@ -1,6 +1,6 @@
 
 // CSS
-import classes from "../../Css/index.module.scss";
+import classes from "../../css/index.module.scss";
 
 const TestimonialSection = () => {
     return (

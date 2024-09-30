@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // CSS
-import classes from "../../Css/index.module.scss";
+import classes from "../../css/index.module.scss";
 
 import Logo from "../../assets/PBT-White-Logo-150x224.png";
 

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 // CSS
-import classes from "../../Css/index.module.scss";
+import classes from "../../css/index.module.scss";
 
 // image
 import TaxiMarker from "../../assets/location-marker.png";

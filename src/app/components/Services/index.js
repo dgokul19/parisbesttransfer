@@ -3,10 +3,10 @@
 import ServiceBox from "./ServiceBox";
 
 // Constants
-import { SERVICES_DATA } from "../../constatnts/services";
+import { SERVICES_DATA } from "../../constants/services";
 
 //CSS
-import classes from "../../Css/index.module.scss";
+import classes from "../../css/index.module.scss";
 
 const CabServices = () => {
     return (
