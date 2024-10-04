@@ -19,10 +19,10 @@ const FooterComponent = () => {
                         <h3>Quick Links</h3>
                         <ul>
                             <li><Link href='/'> Home </Link></li>
-                            <li><Link href='/'> Booking </Link></li>
-                            <li><Link href='/'> Services </Link></li>
-                            <li><Link href='/'> Faq </Link></li>
-                            <li><Link href='/'> Booking Cancellation </Link></li>
+                            <li><Link href='/booking'> Booking </Link></li>
+                            <li><Link href='/services'> Services </Link></li>
+                            <li><Link href='/faq'> Faq </Link></li>
+                            <li><Link href='/cancel-booking'> Booking Cancellation </Link></li>
                         </ul>
                     </div>
                     <div className={classes.footerBx}>

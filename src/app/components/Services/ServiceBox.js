@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import Link from "next/link";
 
 // CSS
 import classes from "../../styles/index.module.scss";
@@ -23,7 +23,7 @@ const ServiceBox = ({list}) => {
                 <div className={classes.serviceBxContent}>
                     <h4>{list.title}</h4>
                     <p>{list.content}</p>
-                    <div className={classes.readmore}>Readmore..</div>
+                    <Link href="/services"className={classes.readmore}>Readmore..</Link>
                 </div>
             </div>
         </>

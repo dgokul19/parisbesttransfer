@@ -38,7 +38,7 @@ export default function ServicesPage() {
             
             <form className={classes.bookingForm}>
                 <h3>Book your cab Ride</h3>
-                <p>NOTE: The booking must be done minimum before 6 hours through online booking. For late booking please call our customer care <strong className="nav-active">+33 749 394 004</strong></p>
+                <p>Booking must be done minimum before 6 hours through online booking. For late booking please call our customer care <strong className="nav-active">+33 749 394 004</strong></p>
 
               {/* Content ****----LEFT----**** Side in the Form */}
                 <div className={classes.contentForm}>

@@ -1,0 +1,8 @@
+.testimonailContainer{
+    width: 100%;
+    background-color: var(--dirty-white);
+    padding: 5rem 0;
+    & > div {
+        gap: 2rem;
+    }
+}

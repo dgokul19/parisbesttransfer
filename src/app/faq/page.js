@@ -33,8 +33,6 @@ export default function FaqComponent() {
     setBookingProcess(updateContent);
   };
 
-  console.log({bookProcess});
-
   return (
     <div className={classes.page}>
         <NavigationMenu />        
@@ -56,8 +54,6 @@ export default function FaqComponent() {
                   ))
                 }
               </div>
-
-              <hr></hr>
 
               <h3>Before Travelling</h3>
               <div className={classes.accordionWrapper}>

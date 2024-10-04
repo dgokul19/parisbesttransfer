@@ -1,6 +1,15 @@
 
+// Component
+import ReviewBox from "./ReviewBox";
+
 // CSS
 import classes from "../../styles/index.module.scss";
+
+
+// Constants
+import { TESTIMONIAL_FEEDBACKS } from "../../constants/testimonial";
+
+const { content, user } = TESTIMONIAL_FEEDBACKS[0];
 
 const TestimonialSection = () => {
     return (
@@ -13,8 +22,7 @@ const TestimonialSection = () => {
                             <h3> Our Passenger Review !!</h3>
                         </div>
 
-                        <div className={classes.reviewBox}>
-                            <iframe src="https://www.youtube.com/embed/Ny_MU22LmEY?si=wJoa7DhEQWw9Forz" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>                            </div>
+                        <ReviewBox content={content} user={user}/>
                     </div>
                     <div className={classes.faq}>
                         <div className={classes.titleSection}>

@@ -1,7 +1,10 @@
+"use client";
+
 import { Fragment } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
 
 // CSS
 import classes from "../../styles/index.module.scss";
@@ -9,6 +12,7 @@ import classes from "../../styles/index.module.scss";
 import Logo from "../../assets/PBT-White-Logo-150x224.png";
 
 const NavigationMenu = () => {
+    const pathname = usePathname();
     return (
         <Fragment>
             <div className={classes.menuWrapper}>
@@ -30,19 +34,19 @@ const NavigationMenu = () => {
                 <div className={classes.navContainer}>
                     <div className={'container flex justify-space-between'}>
                         <div className={classes.logoElem}>
-                            <Image src={Logo} alt="Paris Best Transfer Logo" />
+                            <Link href="/"><Image src={Logo} alt="Paris Best Transfer Logo" /></Link>
                         </div>
                         <div className={classes.navRightElem}>
                             <ul>
-                                <li><Link href="/">Home</Link></li>
-                                <li><Link href="/booking">Booking</Link></li>
-                                <li><Link href="/services">Services</Link></li>
-                                <li><Link href="/faq">Faq</Link></li>
-                                <li><Link href="/contact">Contact</Link></li>
+                                <li className={`${pathname === '/' ? 'nav-active' : ''}`}><Link href="/">Home</Link></li>
+                                <li className={`${pathname === '/booking' ? 'nav-active' : ''}`}><Link href="/booking">Booking</Link></li>
+                                <li className={`${pathname === '/services' ? 'nav-active' : ''}`}><Link href="/services">Services</Link></li>
+                                <li className={`${pathname === '/testimonial' ? 'nav-active' : ''}`}><Link href="/testimonial">Testimonial</Link></li>
+                                <li className={`${pathname === '/faq' ? 'nav-active' : ''}`}><Link href="/faq">Faq</Link></li>
                             </ul>
                         </div>
                         <div className={classes.bookNowElem}>
-                            <button>Book a Taxi</button>
+                            <Link href="/booking">Book a Taxi</Link>
                         </div>
                     </div>
                 </div>
