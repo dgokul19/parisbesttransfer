@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 // CSS
 import classes from "../../styles/index.module.scss";
 
-import Logo from "../../assets/PBT-White-Logo-150x224.png";
+import Logo from "../../assets/Logo-PBT-Black.png";
 
 const NavigationMenu = () => {
     const pathname = usePathname();
