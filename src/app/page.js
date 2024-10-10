@@ -5,6 +5,9 @@ import HomeBanner from "./components/HomeBanner";
 import AboutSection from "./components/AboutSection";
 import CabServices from "./components/Services";
 import TestimonialSection from "./components/TestimonialSection";
+import FeaturesComponent from "./components/WhyChooseUs";
+import FleetComponent from "./components/FleetComponent";
+
 import FooterComponent from "./components/Footer";
 
 
@@ -15,7 +18,9 @@ export default function Home() {
     <div className={classes.page}>
         <NavigationMenu />        
         <HomeBanner />
+        <FeaturesComponent />
         <AboutSection />
+        <FleetComponent />
         <CabServices />
         <TestimonialSection />
         <FooterComponent />

@@ -102,7 +102,7 @@ const BookingForm = () => {
                     <label>Total Fare</label>
                     <span className={classes.rateValue}>{form.rateCharge} <i className="fa fa-euro"></i> ( Tax Included )</span>
 
-                    <button>Book Ride</button>
+                    <button className={classes.submitStyle}>Book Ride</button>
                 </div>
             </form>
         </div>

@@ -5,6 +5,9 @@
     box-shadow: 0 1px 5px rgb(0 0 0 / 15%);
     border-radius: 4px;
 }
+.heightAuto{
+    height: auto !important;
+}
 
 .bookingForm{
     width: 100%;
@@ -21,45 +24,34 @@
     .contentColumn{
         flex: 1;
     }
-    .formRow{
-        display: flex;
-        justify-content: space-between;
-        margin-top: 15px;
-        gap: 1rem;
-    }
     .priceGroup {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
-
-        button {
-            height: 45px;
-            line-height: 45px;
-            background-color: var(--primary);
-            color: var(--white);
-            border: transparent;
-            min-width: 150px;
-            border-radius: 3px;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
     }
 }
 
 
 
 // Form Fields
-
+.formRow{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    gap: 1rem;
+}
 .formGroup {
-    flex: 1;
+    width: 100%;
     height: 55px;
     border: 1px solid rgb(0 0 0 / 15%);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    input, select {
+    background-color: var(--primary);
+    input, select, textarea {
         flex: 1;
         height: 100%;
         border: none;
@@ -69,10 +61,56 @@
         outline: none;
         text-transform: uppercase;
     }
+    textarea {
+        min-height: 120px;
+    }
     i {
         width: 40px;
         height: 100%;
         text-align: center;
         line-height: 55px;
+        background-color: transparent;
+        color: var(--white);
     }
+}
+
+
+button.submitStyle {
+    height: 45px;
+    line-height: 45px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: transparent;
+    min-width: 150px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+
+
+/* Mobile Responsive Content */
+
+// Media Query Mobile [ Max 480px / Min 320px ]
+
+@media only screen and (max-width: 600px) {
+
+    // Booking Form
+    .bookingWrapper{
+        width: 100%;
+        padding: 1rem;
+        .bookingForm {
+            padding: 0;
+
+            .contentForm {
+                flex-direction: column;
+                input,select{
+                    width: calc(100% - 40px);
+                    font-size: .8rem;
+                }
+            }
+        }
+    }
+
 }

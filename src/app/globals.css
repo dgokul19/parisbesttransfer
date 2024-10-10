@@ -5,6 +5,9 @@
   /* --primary: #efdf8a; */
   --primary: #ceaf06;
   --dirty-white : #F4F5F8;
+  --title-before : #ceaf0650;
+  --title-mid : #ceaf068f;
+  scroll-behavior: smooth;
 }
 
 html,

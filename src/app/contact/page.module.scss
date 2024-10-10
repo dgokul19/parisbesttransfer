@@ -1,0 +1,52 @@
+.contactContainer{
+    padding: 5rem 0;
+    background-image: url('../assets/map.png');
+    background-color: var(--dirty-white);
+    height: 600px;
+    & > div {
+        height: 100%;
+        display: flex;
+        gap: 1rem;
+        h2{
+            font-size: 2rem;
+            text-transform: capitalize;
+            margin-bottom: 10px;
+        }
+        p{
+            width: 80%;
+            color: #555;
+        }
+        .contactDetails, .contactForm{
+            flex: 1;
+        }
+        .contactDetails{
+            ul {
+                width: 100%;
+                margin-top: 2rem;
+                list-style: none;
+                li {
+                    display: flex;
+                    gap: 1rem;
+                    height: 60px;
+                    align-items: center;
+                    margin: 1rem 0;
+                    width: 100%;
+                    i {
+                        width: 55px;
+                        height: 55px;
+                        aspect-ratio: 1;
+                        border: 1px solid var(--primary);
+                        color: var(--primary);
+                        text-align: center;
+                        line-height: 55px;
+                        font-size: 1.5rem;
+                    }
+                    .contacText{
+                        width: 100%;
+                        color: var(--black);
+                    }
+                }
+            }
+        }
+    }
+}
