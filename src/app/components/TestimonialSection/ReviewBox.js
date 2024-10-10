@@ -3,7 +3,6 @@ import classes from "../../styles/index.module.scss";
 
 const ReviewBox = ({ content, user }) => {
     return (
-        <>
             <div className={classes.reviewBox}>
                 <div className={classes.topIcon}><i className="fa fa-quote-right"></i></div>
                 <p>{content}</p>
@@ -15,7 +14,6 @@ const ReviewBox = ({ content, user }) => {
                     </div>
                 </div>
             </div>
-        </>
     );
 }
 

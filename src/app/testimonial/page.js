@@ -14,7 +14,7 @@ import FooterComponent from "../components/Footer";
 import { TESTIMONIAL_FEEDBACKS } from "../constants/testimonial";
 
 // CSS
-import classes from "./page.module.scss";
+import classes from "../styles/index.module.scss";
 
 export default function TestimonialComponent() {
 
@@ -25,7 +25,7 @@ export default function TestimonialComponent() {
         <NavigationMenu />        
         <SubBanner title={'Our Client Feedbacks'} route={'Testimonial'}/>
 
-        <div className={classes.testimonailContainer}>
+        <div className={classes.testimonialContainer}>
           <div className="container flex">
               {feedbacks.map((review,idx) => <ReviewBox key={idx.toString()} content={review.content} user={review.user}/>)}
           </div>

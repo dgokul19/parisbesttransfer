@@ -1257,10 +1257,10 @@
         }
         .testimonialBox {
             width: 100%;
-            .reviewBox{
-                width: 100%;
-                max-height: none;
-            }
+        }
+        .reviewBox{
+            width: 100%;
+            max-height: none;
         }
         .faq {
             position: static;
@@ -1294,6 +1294,12 @@
             flex-direction:column;
             align-items: center;
             gap: 1rem;
+        }
+    }
+
+    .subPageBannerBg{
+        h2{
+            font-size: 2rem;
         }
     }
 
