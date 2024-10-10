@@ -1,4 +1,4 @@
-
+"use client";
 
 // Components
 import NavigationMenu from "../components/Navbar";
@@ -22,7 +22,6 @@ export default function ServicesPage() {
         <SubBanner title={'Booking'} route={'Booking'}/>
         <div className={classes.bookingContainer}>
           <div className="container flex justify-content-center">
-            
             <BookingForm />
           </div>
         </div>
