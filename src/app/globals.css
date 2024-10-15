@@ -42,8 +42,17 @@ img {
   height : auto;
   margin : 0 auto !important;
 }
+.text-left{
+  text-align: left !important;
+}
 .flex {
   display: flex !important;
+}
+.height-auto {
+  height: auto !important;
+}
+.flex-column {
+  flex-direction: column !important;
 }
 .justify-space-between {
   justify-content: space-between !important;
@@ -127,6 +136,69 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-size: 10px;
   height: 22px;
   width: 22px;
+}
+
+
+/* The container */
+.radioContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radioContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.radioContainer .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: var(--dirty-white);
+  border: 2px solid var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+/* When the radio button is checked, add a blue background */
+.radioContainer input:checked ~ .checkmark {
+  border: 2px solid var(--primary);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radioContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radioContainer .checkmark:after {
+ 	/* top: 9px;
+	left: 9px; */
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: var(--primary);
 }
 
 
