@@ -13,7 +13,7 @@ const FeaturesComponent = () => {
                     <div className={classes.featureBoxContainer}>
                         <div className={classes.featureBx}>
                             <i className={'fa fa-car'}></i>
-                            <span>Best Car Selection</span>
+                            <span>Luxury Vehicles</span>
                         </div>
                         <div className={classes.featureBx}>
                             <i className={'fa fa-phone'}></i>
@@ -25,7 +25,7 @@ const FeaturesComponent = () => {
                         </div>
                         <div className={classes.featureBx}>
                             <i className={'fa fa-child'}></i>
-                            <span>Free Baby Seats</span>
+                            <span>Free Baby & Booster Seats</span>
                         </div>
                         <div className={classes.featureBx}>
                             <i className={'fa fa-id-card'}></i>
