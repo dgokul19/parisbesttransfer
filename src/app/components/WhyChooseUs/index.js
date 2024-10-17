@@ -13,7 +13,7 @@ const FeaturesComponent = () => {
                     <div className={classes.featureBoxContainer}>
                         <div className={classes.featureBx}>
                             <i className={'fa fa-car'}></i>
-                            <span>Best Car Selection</span>
+                            <span>Luxury Vehicles</span>
                         </div>
                         <div className={classes.featureBx}>
                             <i className={'fa fa-phone'}></i>

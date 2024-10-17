@@ -215,9 +215,6 @@ const BookingForm = ({ onFormSubmit }) => {
         return null;
     }
 
-
-    console.log({locationType});
-
     return (
         <div className={classes.bookingWrapper}>
             <form className={classes.bookingForm}>

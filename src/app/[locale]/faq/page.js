@@ -2,14 +2,14 @@
 import { useState } from "react";
 
 // Components
-import NavigationMenu from "../components/Navbar";
-import SubBanner from "../components/SubBanner";
+import NavigationMenu from "../../components/Navbar";
+import SubBanner from "../../components/SubBanner";
 
-import Services from "../components/Services";
-import TestimonialSection from "../components/TestimonialSection";
-import FooterComponent from "../components/Footer";
+import Services from "../../components/Services";
+import TestimonialSection from "../../components/TestimonialSection";
+import FooterComponent from "../../components/Footer";
 
-import { BOOKING_PROCESS, BOOKING_TRAVEL } from "../constants/faq";
+import { BOOKING_PROCESS, BOOKING_TRAVEL } from "../../constants/faq";
 
 // CSS
 import classes from "./page.module.scss";

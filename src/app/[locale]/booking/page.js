@@ -1,14 +1,14 @@
 "use client";
 import { useState } from "react";
 // Components
-import NavigationMenu from "../components/Navbar";
-import SubBanner from "../components/SubBanner";
+import NavigationMenu from "../../components/Navbar";
+import SubBanner from "../../components/SubBanner";
 
-import CabServices from "../components/Services";
-import TestimonialSection from "../components/TestimonialSection";
-import FooterComponent from "../components/Footer";
-import BookingForm from "../components/Booking/BookingForm";
-import BookingDetails from "../components/Booking/BookingDetails";
+import CabServices from "../../components/Services";
+import TestimonialSection from "../../components/TestimonialSection";
+import FooterComponent from "../../components/Footer";
+import BookingForm from "../../components/Booking/BookingForm";
+import BookingDetails from "../../components/Booking/BookingDetails";
 
 // CSS
 import classes from "./page.module.scss";

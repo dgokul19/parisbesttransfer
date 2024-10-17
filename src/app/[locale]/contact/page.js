@@ -2,9 +2,9 @@
 import { useState } from "react";
 
 // Components
-import NavigationMenu from "../components/Navbar";
-import SubBanner from "../components/SubBanner";
-import FooterComponent from "../components/Footer";
+import NavigationMenu from "../../components/Navbar";
+import SubBanner from "../../components/SubBanner";
+import FooterComponent from "../../components/Footer";
 
 // CSS
 import classes from "./page.module.scss";

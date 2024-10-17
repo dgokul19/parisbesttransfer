@@ -3,12 +3,14 @@
 import { Fragment, useState, useCallback, useMemo } from "react";
 
 import Image from "next/image";
-import Link from "next/link";
+import { multiLang, Link } from "@/i18n/routing";
 import { usePathname } from 'next/navigation';
 
 // Hooks
 import useScreenSize from "@/app/hooks/useScreenSize";
 
+// Components
+import LanguageSwitcher from "../LanguageSwitcher";
 
 // CSS
 import classes from "../../styles/index.module.scss";
@@ -16,7 +18,8 @@ import classes from "../../styles/index.module.scss";
 // Assets
 import Logo from "../../assets/Logo-PBT-Black.png";
 
-const NavigationMenu = () => {
+const NavigationMenu = ({locale}) => {
+
     const pathname = usePathname();
     const { isMobile } = useScreenSize();
     
@@ -48,12 +51,15 @@ const NavigationMenu = () => {
                             <li><i className="fa fa-envelope"></i>info@parisbesttransfer.com</li>
                         </ul>
 
-                        <ul className={classes.socialIcons}>
-                            <li><i className="fa fa-whatsapp"></i></li>
-                            <li><i className="fa fa-facebook"></i> </li>
-                            <li><i className="fa fa-twitter"></i></li>
-                            <li><i className="fa fa-youtube"></i></li>
-                        </ul>
+                        <div className={classes.topRowRightDiv}>
+                            <ul className={classes.socialIcons}>
+                                <li><i className="fa fa-whatsapp"></i></li>
+                                <li><i className="fa fa-facebook"></i> </li>
+                                <li><i className="fa fa-twitter"></i></li>
+                                <li><i className="fa fa-youtube"></i></li>
+                            </ul>
+                            <LanguageSwitcher />
+                        </div>
                     </div>
                 </div>
                 <div className={classes.navContainer}>
