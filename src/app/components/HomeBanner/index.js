@@ -15,7 +15,7 @@ const HomeBanner = () => {
                 <div className="container flex relative">
                     <div className={classes.leftBanner}>
                         <h4>Travel securely with us</h4>
-                        <h2>Book you Taxi from anywhere today !</h2>
+                        <h2>Book you private taxi from anywhere today !</h2>
                         <p>24/7 Door to Door Private Transfers between CDG Airport, Orly Airport, Beauvais Airport, Disneyland Paris and Paris city.</p>
                         <span><Link href={'/booking'}>Book Your Ride</Link></span>
                     </div>

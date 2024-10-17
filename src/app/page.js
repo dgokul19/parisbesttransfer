@@ -4,6 +4,7 @@ import NavigationMenu from "./components/Navbar";
 import HomeBanner from "./components/HomeBanner";
 import AboutSection from "./components/AboutSection";
 import CabServices from "./components/Services";
+import BookingMain from "./components/Booking/BookingMain";
 import TestimonialSection from "./components/TestimonialSection";
 import FeaturesComponent from "./components/WhyChooseUs";
 import FleetComponent from "./components/FleetComponent";
@@ -18,8 +19,9 @@ export default function Home() {
     <div className={classes.page}>
         <NavigationMenu />        
         <HomeBanner />
-        <FeaturesComponent />
+        <BookingMain />
         <AboutSection />
+        <FeaturesComponent />
         <FleetComponent />
         <CabServices />
         <TestimonialSection />

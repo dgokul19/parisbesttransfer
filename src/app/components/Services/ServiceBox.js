@@ -12,7 +12,6 @@ const ServiceBox = ({list}) => {
     return (
         <>
             <div className={classes.servicesBox}>
-                
                 <div className={classes.imageBoxElem}>
                     <Image src={list.bgImage} alt={list.title} />
                     <div className={classes.shapeEle}></div>

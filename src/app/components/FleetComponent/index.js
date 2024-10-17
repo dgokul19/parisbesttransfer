@@ -52,10 +52,10 @@ const FleetComponent = () => {
                     </div>
                     <div className={classes.fleetBox}>
                         <div className={classes.fleetImage}>
-                            <Image src={Fleet4} alt={`Fleet Type 4 - Business Van`}/>
+                            <Image src={Fleet4} alt={`Fleet Type 4 - Bus`}/>
                         </div>
                         <div className={classes.fleetContentBx}>
-                            <h4>Business Van</h4>
+                            <h4>Bus</h4>
                             <p>Experience luxury and convinience with our  high end business van, perfect for group transfers and executive  travel.</p>
                             <Link href='/booking'>Ride Now</Link>
                         </div>

@@ -236,7 +236,7 @@
         }
 
         h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             line-height: 3rem;
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -839,7 +839,7 @@
             max-width: 340px;
             flex: 1;
             height: 600px;
-            background-image: url('../assets/services-1.jpg');
+            background-image: url('../assets/services-2.jpg');
             background-size: cover;
             background-position: center center;
             border-radius: 4px;
@@ -862,10 +862,10 @@
                 z-index: 1;
             }
             &:nth-child(2){
-                background-image: url('../assets/services-2.jpg');
+                background-image: url('../assets/services-1.jpg');
             }
             &:nth-child(3){
-                background-image: url('../assets/services-3.jpg');
+                background-image: url('../assets/fleet-4.jpg');
                 background-position: center center;
             }
             & > *{
