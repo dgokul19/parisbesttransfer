@@ -571,9 +571,9 @@
             .carContent {
                 position: absolute;
                 bottom: -30px;
-                right: 0px;
-                transform: scale(1);
-                transition: .2s linear all;
+                right: -30px;
+                transform: scale(.9);
+                transition: .3s linear all;
 
                 img {
                     width: 180px;
@@ -584,7 +584,7 @@
             &:hover {
                 .carContent {
                     right: 0;
-                    transform: scale(1.3);
+                    transform: scale(1.1);
                 }
 
                 .shapeEle {
@@ -893,7 +893,7 @@
                 }
             }
             
-            button {
+            a {
                 height: 45px;
                 max-width: 200px;
                 line-height: 45px;
@@ -901,9 +901,12 @@
                 color: var(--white);
                 border: transparent;
                 min-width: 150px;
+                text-align: center;
                 border-radius: 3px;
                 text-transform: uppercase;
-                font-weight: 700;
+                font-weight: 600;
+                font-size: .9rem;
+                color: var(--white);
             }
         }
     }

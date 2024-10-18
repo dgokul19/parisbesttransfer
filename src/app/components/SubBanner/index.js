@@ -1,7 +1,7 @@
 // CSS
 import classes from "../../styles/index.module.scss";
 
-const SubBanner = ({title, route}) => {
+const SubBanner = ({title, route, subRoute}) => {
     return (
         <>
             <div className={classes.subPageBannerBg}>
@@ -10,6 +10,12 @@ const SubBanner = ({title, route}) => {
                     <li>Home</li>
                     <li><i className="fa fa-angle-right"></i></li>  
                     <li className="nav-active">{route}</li> 
+                    {subRoute && (
+                        <>
+                            <li><i className="fa fa-angle-right"></i></li>  
+                            <li className="nav-active">{subRoute}</li>
+                        </>
+                    )} 
                 </ul> 
             </div>
         </>
