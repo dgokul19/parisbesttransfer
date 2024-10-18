@@ -31,7 +31,7 @@ const BookingForm = ({ onFormSubmit }) => {
         pickupDate : '',
         pickUpTime : '',
         locationDetails : '',
-        passengersCount : 1,
+        passengersCount : '',
         isReturnTransfer : false,
         rateCharge : '0.00',
       });
@@ -288,7 +288,8 @@ const BookingForm = ({ onFormSubmit }) => {
                 <div className={classes.formRow}>
                     <div className={classes.formGroup}>
                         <select value={form.passengersCount} onChange={handleChange}>
-                            <option>1</option>
+                            <option value=''>Select the passengers count</option>
+                            <option value='1'>1</option>
                             <option>2</option>
                             <option>3</option>
                             <option>4</option>

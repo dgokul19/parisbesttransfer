@@ -14,13 +14,11 @@ const ParisPackageServices = () => {
                     <div className={classes.parisPackageSectn}>
                         <div className={classes.packageBx}>
                             <h3>Paris City Tour</h3>
+                            <p>Eiffel Tower, The Louvre, Notre Dame de Paris, Arc de triomph, Montmartre, Avenue des champs elysée, Musée d’orsay, Sainte-chapelle</p>
+                            <h4><u>Hourly Packages</u></h4>
                             <p>4 Hours Tour</p>
                             <p>6 Hours Tour</p>
                             <p>8 Hours Tour</p>
-                            {/* <div className={classes.priceElem}>
-                                <span>from</span>
-                                <label><i className="fa fa-euro"></i> 200</label>
-                            </div> */}
                             <Link href={'/booking'}>Book Ride</Link>
                         </div>
 
@@ -43,7 +41,7 @@ const ParisPackageServices = () => {
 
                         <div className={classes.packageBx}>
                             <h3>Bus Trip</h3>
-                            <p>Our bus services to all destinations in France for less prices, for more information contact Paris Best Transfer</p>
+                            <p>Our bus services to all destinations in France for less prices, for more information, kindly contact Paris Best Transfer</p>
                             {/* <div className={classes.priceElem}>
                                 <span>from</span>
                                 <label><i className="fa fa-euro"></i> 400</label>

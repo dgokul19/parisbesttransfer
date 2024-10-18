@@ -22,7 +22,7 @@ const ServiceBox = ({list}) => {
                 <div className={classes.serviceBxContent}>
                     <h4>{list.title}</h4>
                     <p>{list.content}</p>
-                    <Link href="/services"className={classes.readmore}>Readmore..</Link>
+                    <Link href="/booking"className={classes.readmore}>Book Now</Link>
                 </div>
             </div>
         </>

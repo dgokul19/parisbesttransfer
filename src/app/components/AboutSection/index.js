@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 // CSS
 import classes from "../../styles/index.module.scss";
@@ -21,12 +22,12 @@ const AboutSection = () => {
                         <h4> <span className={classes.highighter}></span>About out Company</h4>
                         <h3> Feel the difference and Relaxation with Us !</h3>
                         <p>We are specialized in airport transportation and take hundreds of happy customers to the airport every day. Safe and sound, for the best price. Or, if you wish so, we can take you from the airport to any destination in The Paris. </p>
-
+                        <strong> Approved by the French Government</strong>
                         <div className={classes.contactNo}>
                             <i className="fa fa-user"></i>
                             <span>
                                 <p>Call for Taxi</p>
-                                <h3> +33 749 394 004 </h3>
+                                <Link href={'tel:+33 749 394 004'}><h3> +33 749 394 004 </h3></Link>
                             </span>
                         </div>
                     </div>
