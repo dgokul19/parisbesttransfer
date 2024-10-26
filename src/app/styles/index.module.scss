@@ -424,7 +424,7 @@
             display: flex;
             align-items: center;
             gap: 2rem;
-            margin-top: 30px;
+            margin-top: 20px;
 
             i {
                 width: 60px;
@@ -697,7 +697,9 @@
 
         .titleSection {
             gap: 1rem;
-
+            h4{
+                color: var(--white);
+            }
             .highighter {
                 top: 0;
                 background-color: rgba(255, 255, 255, .8);
@@ -958,6 +960,12 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            &.cardPayment{
+                flex-direction: row;
+                li {
+                    font-size: 2.5rem;
+                }
+            }
 
             li {
                 display: flex;
@@ -1022,7 +1030,7 @@
 // Why Choose US Content
 .featureContainer{
     width: 100%;
-    padding: 3rem 0 1rem;
+    padding: 1rem 0;
     .titleSection {
         h4 {
             font-size: 1.5rem;
@@ -1207,6 +1215,7 @@
         & >div {
             flex-direction: column;
             flex-flow: column-reverse;
+            gap: 2rem;
             .leftAbout{
                 width: 100%;
                 img {

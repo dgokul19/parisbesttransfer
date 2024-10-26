@@ -41,6 +41,16 @@ const FooterComponent = () => {
                             </li>
                         </ul>
                     </div>
+                    <div className={classes.footerBx}>
+                        <h3>Payment Methods</h3>
+                        <ul className={classes.cardPayment}>
+                            <li><i className="fa fa-cc-stripe"></i></li>
+                            <li><i className="fa fa-cc-visa"></i></li>
+                            <li><i className="fa fa-cc-amex"></i></li>
+                            <li><i className="fa fa-cc-mastercard"></i></li>
+                        </ul>
+                        <p>We also have Pay by Cash to the driver options.</p>
+                    </div>
                 </div>
             </div>
         </>

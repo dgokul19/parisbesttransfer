@@ -14,6 +14,10 @@ import {
     PARIS_OPTION,
     DEFAULT_LOCATION_OPTIONS
 } from "../../constants/booking";
+import { 
+    handleDateFormat,
+    handleTimeFormat
+} from "../../utils/helper";
 
 const { AIRPORT, DISNEY, PARIS, FROM_AIRPORT, AIRPORT_HOTEL } = LOCATION_TYPE;
 
@@ -28,8 +32,8 @@ const BookingForm = ({ onFormSubmit }) => {
     const [ form, setForm ] = useState({
         fromLocation : '',
         toLocation : '',
-        pickupDate : '',
-        pickUpTime : '',
+        pickupDate : handleDateFormat(new Date()),
+        pickUpTime : handleTimeFormat(new Date()),
         locationDetails : '',
         passengersCount : '',
         isReturnTransfer : false,
@@ -45,7 +49,6 @@ const BookingForm = ({ onFormSubmit }) => {
   
       const handlePariseOption = (e) => {
         const { name, value } = e.target;
-        console.log({name, value});
         setSelectedParisOption({
             ...selectedParis,
             [name] : value
@@ -215,15 +218,13 @@ const BookingForm = ({ onFormSubmit }) => {
         return null;
     }
 
-
-    console.log({locationType});
-
     return (
         <div className={classes.bookingWrapper}>
             <form className={classes.bookingForm}>
                 <h3>Book your cab Ride</h3>
                 <p>Booking must be done minimum before 8 hours through online booking. For late booking please call our customer care <strong className="nav-active">+33 749 394 004</strong></p>
-
+                <p>Free Cancellation up to 24hrs before the trip.</p>
+                
                 {/* Content ****----LEFT----**** Side in the Form */}
                 <div className={classes.contentForm}>
                     <div className={classes.contentColumn}>
@@ -245,9 +246,11 @@ const BookingForm = ({ onFormSubmit }) => {
                             <div className={classes.formGroup}>
                                 <input placeholder={`PickUp Date`}
                                     name={'pickUpDate'}
-                                    value={form.pickUpTime}
+                                    type={`date`}
+                                    min={handleDateFormat()}
+                                    value={form.pickupDate}
                                     onChange={handleChange} />
-                                <i className={`fa fa-calendar`}></i>
+                                {/* <i className={`fa fa-calendar`}></i> */}
                             </div>
                         </div>
 
@@ -275,7 +278,9 @@ const BookingForm = ({ onFormSubmit }) => {
 
                         <div className={classes.formRow}>
                             <div className={classes.formGroup}>
-                                <input name={`pickUpTime`} placeholder={`PickUp Time`}
+                                <input name={`pickUpTime`} 
+                                    type={`time`}
+                                    placeholder={`PickUp Time`}
                                     value={form.pickUpTime}
                                     onChange={handleChange} />
                                 <i className={`fa fa-clock-o`}></i>

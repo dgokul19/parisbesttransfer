@@ -6,9 +6,6 @@ const FeaturesComponent = () => {
     return (
         <>
             <div className={classes.featureContainer}>
-                <div className={classes.titleSection}>
-                    <h4> Why Choose Us </h4>
-                </div>
                 <div className="container">
                     <div className={classes.featureBoxContainer}>
                         <div className={classes.featureBx}>
