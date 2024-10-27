@@ -42,3 +42,74 @@ export const DEFAULT_LOCATION_OPTIONS = {
     fromLocation : '',
     toLocation : '',
   }
+
+/* 
+  [
+   { type : AIRPORT,  children : [Orly, Beauvais, CDG] },
+        
+    Stations,
+        [Stn1, ST2, ST3]
+    Hotels
+        [Hotels, ]
+  ] */
+
+/*      [
+            {label : 'Airport', type : 'heading', value : ''},
+            {label : 'Beavais Airport', type: option, value : 'Beavais Airport'}
+            {label : 'Oly Airport', type: option, value : 'Oly Airport'}
+            {label : 'CDS Airport', type: option, value : 'CDG Airport'}
+            {label : 'Hotels', type: heading, value : ''}
+            {label : 'Holiday Inn Beavais Airport', type: option, value : 'Holiday Inn Beavais Airport'}
+        ] */
+
+/*   [
+  {
+    "id": 1,
+    "category": "Booking Process",
+    "order": 1,
+    "language": "en",
+    "added_on": "2024-10-25T04:41:23.320263Z",
+    "questions": [
+      {
+        "id": 1,
+        "order": 1,
+        "question": "Can I book a transfer to the airport?",
+        "answer": "Yes, you can book a transfer to the airport or any other destination by choosing them in destination point field.",
+        "added_on": "2024-10-25T04:36:25.073797Z"
+      }
+    ]
+  },
+   {
+    "id": 1,
+    "category": "Booking Process",
+    "order": 1,
+    "language": "fr",
+    "added_on": "2024-10-25T04:41:23.320263Z",
+    "questions": [
+      {
+        "id": 1,
+        "order": 1,
+        "question": "Can I book a transfer to the airport?",
+        "answer": "Yes, you can book a transfer to the airport or any other destination by choosing them in destination point field.",
+        "added_on": "2024-10-25T04:36:25.073797Z"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "Booking Trvellong",
+    "order": 1,
+    "language": "en",
+    "added_on": "2024-10-25T04:41:23.320263Z",
+    "questions": [
+      {
+        "id": 1,
+        "order": 1,
+        "question": "Can I book a transfer to the airport?",
+        "answer": "Yes, you can book a transfer to the airport or any other destination by choosing them in destination point field.",
+        "added_on": "2024-10-25T04:36:25.073797Z"
+      }
+    ]
+  }
+]
+ */
