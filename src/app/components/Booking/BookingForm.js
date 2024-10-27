@@ -242,7 +242,8 @@ const BookingForm = ({ onFormSubmit }) => {
                         {renderPickUpLocationDetails(`fromLocation`)}
                         {renderParisTrainStation(`fromLocation`)}
 
-                        <div className={classes.formRow}>
+                        <div className={`flex-column ${classes.formRow}`}>
+                            <label className={classes.mobileLabel}>Pickup Date</label>
                             <div className={classes.formGroup}>
                                 <input placeholder={`PickUp Date`}
                                     name={'pickUpDate'}
@@ -276,7 +277,8 @@ const BookingForm = ({ onFormSubmit }) => {
                         {renderPickUpLocationDetails(`toLocation`)}
                         {renderParisTrainStation(`toLocation`)}
 
-                        <div className={classes.formRow}>
+                        <div className={`flex-column ${classes.formRow}`}>
+                            <label className={classes.mobileLabel}>Pickup time</label>
                             <div className={classes.formGroup}>
                                 <input name={`pickUpTime`} 
                                     type={`time`}

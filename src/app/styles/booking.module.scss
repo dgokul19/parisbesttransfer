@@ -104,6 +104,13 @@ button.submitStyle {
         align-items: center;
     }
 }
+.mobileLabel{
+    display: none;
+    text-align: left;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--primary);
+}
 
 
 /* Mobile Responsive Content */
@@ -111,7 +118,9 @@ button.submitStyle {
 // Media Query Mobile [ Max 480px / Min 320px ]
 
 @media only screen and (max-width: 600px) {
-
+    .mobileLabel{
+        display: block;
+    }
     // Booking Form
     .bookingWrapper{
         width: 100%;
