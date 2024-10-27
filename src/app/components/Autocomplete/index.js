@@ -51,7 +51,11 @@ const Autocomplete = (props) => {
             return (
                 <div className={classes.optionsContainer}>
                     <ul>
-                        {options.map(list => <li key={list.label} onClick={() => handleSelection(list)}>{list.label}</li>)}
+                        {options.map(list => (
+                            (list.type === "heading") ? 
+                            <li className={`${classes.lisOption} ${classes.headingOption}`} key={list.label}>{list.label}</li> : 
+                            <li className={classes.lisOption} key={list.label} onClick={() => handleSelection(list)}>{list.label}</li>
+                        ))}
                     </ul>
                 </div>
             )
