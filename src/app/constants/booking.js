@@ -41,7 +41,16 @@ export const TRAIN_STATION = [
 export const DEFAULT_LOCATION_OPTIONS = {
     fromLocation : '',
     toLocation : '',
-  }
+}
+
+export const optionsList = [
+  { label: 'Airport', type: 'heading', value: '' },
+  { label: 'Beavais Airport', type: 'option', value: 'Beavais Airport' },
+  { label: 'Oly Airport', type: 'option', value: 'Oly Airport' },
+  { label: 'CDS Airport', type: 'option', value: 'CDG Airport' },
+  { label: 'Hotels', type: 'heading', value: '' },
+  { label: 'Holiday Inn Beavais Airport', type: 'option', value: 'Holiday Inn Beavais Airport' },
+];
 
 /* 
   [
