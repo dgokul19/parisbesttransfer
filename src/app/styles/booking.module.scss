@@ -91,6 +91,11 @@ button.submitStyle {
     text-transform: uppercase;
     font-weight: 700;
     margin-top: 10px;
+    cursor: pointer;
+    &:disabled {
+        cursor: not-allowed;
+        opacity: .5;
+    }
 }
 
 .radioContainer{

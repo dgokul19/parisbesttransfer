@@ -30,26 +30,27 @@ const BookingForm = ({ onFormSubmit }) => {
         rateCharge : '0.00',
       });
 
-      const handleTopDropdown = (e) => {
-        const { name, value } = e.target;
+      const handleTopDropdown = (selection, name) => {
         setForm({
             ...form,
-            [name] : value
+            [name] : selection.label
         });
       }
 
       const handleChange = (e) => {
-        const { name, value } = e.target;
+        let { name, value, checked } = e.target;
+        if(name === `isReturnTransfer`){
+            value = checked
+        }
         setForm({
             ...form,
             [name] : value
         });
       };
 
-      const renderOptions = (propArray) => {
-        return propArray.map(ele => {
-            return <option key={ele.value} value={ele.value}>{ele.label}</option>
-        })
+      const handleSubmit = () => {
+        console.log('1',{ ...form});
+        onFormSubmit();
       };
 
     return (
@@ -66,7 +67,8 @@ const BookingForm = ({ onFormSubmit }) => {
                             <div className={classes.formGroup}>
                                 <Autocomplete
                                     placeholder={`Enter the start destination`}
-                                    className={classes.autoComplete}
+                                    onChange={handleTopDropdown}
+                                    name={`fromLocation`}
                                     options={optionsList}>
                                 </Autocomplete>
                             </div>
@@ -78,15 +80,16 @@ const BookingForm = ({ onFormSubmit }) => {
                                 <input placeholder={`PickUp Date`}
                                     name={'pickUpDate'}
                                     type={`date`}
-                                    min={handleDateFormat()}
+                                    disabled={!form.fromLocation || !form.toLocation}
                                     value={form.pickupDate}
                                     onChange={handleChange} />
-                                {/* <i className={`fa fa-calendar`}></i> */}
                             </div>
                         </div>
 
                         <div className={classes.formRow}>
-                            <input className='css-checkbox' id={'return_checkBox'} type="checkbox" value={form.isReturnTransfer} onChange={handleChange} />
+                            <input 
+                            className='css-checkbox' name={`isReturnTransfer`} id={'return_checkBox'} type="checkbox" 
+                            value={form.isReturnTransfer} onChange={handleChange} />
                             <label htmlFor="return_checkBox">Add Return Transfer</label>
                         </div>
                     </div>
@@ -95,8 +98,9 @@ const BookingForm = ({ onFormSubmit }) => {
                         <div className={classes.formRow}>
                             <div className={classes.formGroup}>
                                 <Autocomplete
-                                    placeholder={`Enter the to destination`}
-                                    className={classes.autoComplete}
+                                    placeholder={`Enter the end destination`}
+                                    onChange={handleTopDropdown}
+                                    name={`toLocation`}
                                     options={optionsList}>
                                 </Autocomplete>
                             </div>
@@ -109,6 +113,7 @@ const BookingForm = ({ onFormSubmit }) => {
                                     type={`time`}
                                     placeholder={`PickUp Time`}
                                     value={form.pickUpTime}
+                                    disabled={!form.fromLocation || !form.toLocation}
                                     onChange={handleChange} />
                                 <i className={`fa fa-clock-o`}></i>
                             </div>
@@ -119,7 +124,7 @@ const BookingForm = ({ onFormSubmit }) => {
 
                 <div className={classes.formRow}>
                     <div className={classes.formGroup}>
-                        <select value={form.passengersCount} onChange={handleChange}>
+                        <select value={form.passengersCount} name={`passengersCount`} onChange={handleChange} disabled={!form?.fromLocation || !form?.toLocation}>
                             <option value=''>Select the passengers count</option>
                             <option value='1'>1</option>
                             <option>2</option>
@@ -135,7 +140,7 @@ const BookingForm = ({ onFormSubmit }) => {
                     <label>Total Fare</label>
                     <span className={classes.rateValue}>{form.rateCharge} <i className="fa fa-euro"></i> ( Tax Included )</span>
 
-                    <button className={classes.submitStyle} onClick={() => onFormSubmit(form)}>Book Ride</button>
+                    <button className={classes.submitStyle} disabled={!form.passengersCount} onClick={() => handleSubmit(form)}>Book Ride</button>
                 </div>
             </form>
         </div>

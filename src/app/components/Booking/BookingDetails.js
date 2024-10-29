@@ -1,30 +1,60 @@
 "use client";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 // CSS
 import classes from "../../styles/booking.module.scss";
 
 const BookingDetails = () => {
-    const [paymentOption, setPaymentOption] = useState(null);
+
     const [form, setForm] = useState({
         firstName: '',
         lastName: '',
         email : '',
         phone : '',
         flightNo : '',
-        luggageCount : '',
-        baby_seat: '',
-        booster_seat : '',
-        special_notes: '',
+        luggageCount : 1,
+        paymentOption : 'paybycash',
+        baby_seat: false,
+        booster_seat : false,
+        specialNotes: '',
         rateCharge : '0.00'
     });
 
-    const handleChange = () => {
-
+    const handleChange = (e) => {
+        let { name, value, checked} = e.target;
+        if(['baby_seat', 'booster_seat'].includes(name)){
+            value = checked;
+        }
+        setForm({
+            ...form,
+            [name] : value
+        });
     };
 
-    const handlePaymentOption = () => {
+    const checkDisablityValidation = useMemo(() => {
+        let inValid = true;
+        const { firstName, lastName, email, phone,  } = form;
 
+        if(firstName && lastName && email && phone) {
+            inValid = false;
+        }
+        return inValid;
+    },[form.firstName,form.lastName,form.email,form.phone]);
+
+    const handleSubmit = async () => {
+        let params = { ...form };
+        console.log({params});
+        // let response = await fetch('https://api.parisbesttransfer.fr/v1/booking', {
+        //     method: 'POST',
+        //     headers: {
+        //       'Accept': 'application/json',
+        //       'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(params)
+        //   }).json();
+        // let json = await response.json()
     };
+
+    console.log({form});
 
     return (
         <div className={classes.bookingWrapper}>
@@ -34,7 +64,7 @@ const BookingDetails = () => {
                 <p>Free Cancellation up to 24hrs before the trip.</p>
 
                 <div className={`flex-column ${classes.contentForm}`}>
-                    <div className={classes.formRow}>
+                    <div className={`${classes.formRow}`}>
                         <div className={classes.formGroup}>
                             <input name={'firstName'} placeholder={`First Name`}
                                 value={form.firstName}
@@ -72,7 +102,7 @@ const BookingDetails = () => {
 
                     <div className={classes.formRow}>
                         <div className={classes.formGroup}>
-                            <select name={`luggageCount`} value={form.fromLocation} onChange={handleChange}>
+                            <select name={`luggageCount`} value={form.luggageCount} onChange={handleChange}>
                                 <option value=''> Enter Luggage </option>
                                 {Array.from(Array(15)).map((v, li) => (<option key={li} value={li+1}>{li+1}</option>))}
                                 <option value='15+'> 15+ </option>
@@ -81,18 +111,22 @@ const BookingDetails = () => {
                     </div>
 
                     <div className={classes.formRow}>
-                        <input className='css-checkbox' id={'baby_seat'} type="checkbox" value={form.addBabySeat} onChange={handleChange} />
+                        <input name={'baby_seat'} className='css-checkbox' id={'baby_seat'} type="checkbox" value={form.baby_seat} onChange={handleChange} />
                         <label htmlFor="baby_seat">Add Baby Seat (1 Months to 3 Years)</label>
                     </div>
 
                     <div className={classes.formRow}>
-                        <input className='css-checkbox' id={'booster_seat'} type="checkbox" value={form.addBoosterSeat} onChange={handleChange} />
+                        <input name={'booster_seat'} className='css-checkbox' id={'booster_seat'} type="checkbox" value={form.booster_seat} onChange={handleChange} />
                         <label htmlFor="booster_seat">Add Booster Seat (3 Years to 6 Years)</label>
                     </div>
 
                     <div className={classes.formRow}>
                         <div className={`height-auto ${classes.formGroup}`}>
-                            <textarea placeholder={`Enter Special Notes`} name={`specialNotes`} value={form.specialNotes}></textarea>
+                            <textarea 
+                                placeholder={`Enter Special Notes`} 
+                                name={`specialNotes`}
+                                onChange={handleChange}
+                                value={form.specialNotes}></textarea>
                         </div>
                     </div>
 
@@ -101,13 +135,13 @@ const BookingDetails = () => {
                         <ul className={`flex-column ${classes.radioContainer}`}>
                             <li>
                                 <label className="radioContainer">Pay Cash to the Driver
-                                    <input type="radio" value={`paybycash`} checked={paymentOption === `paybycash`} name={`paymentOption`} onChange={handlePaymentOption} />
+                                    <input type="radio" value={`paybycash`} checked={form.paymentOption === `paybycash`} name={`paymentOption`} onChange={handleChange} />
                                     <span className="checkmark"></span>
                                 </label>
                             </li>
                             <li>
                                 <label className="radioContainer">Pay by Card to the Driver (+5 EUR per way)
-                                    <input type="radio" value={`paybycard`} checked={paymentOption === `paybycard`} name={`paymentOption`} onChange={handlePaymentOption} />
+                                    <input type="radio" value={`paybycard`} checked={form.paymentOption === `paybycard`} name={`paymentOption`} onChange={handleChange} />
                                     <span className="checkmark"></span>
                                 </label>
                             </li>
@@ -118,7 +152,7 @@ const BookingDetails = () => {
                     <label>Total Fare</label>
                     <span className={classes.rateValue}>{form.rateCharge} <i className="fa fa-euro"></i> ( Tax Included )</span>
 
-                    <button className={classes.submitStyle}>Confirm Booking</button>
+                    <button className={classes.submitStyle} disabled={checkDisablityValidation} onClick={() => handleSubmit()}>Confirm Booking</button>
                 </div>
             </form>
         </div>
