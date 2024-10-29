@@ -17,14 +17,14 @@ import classes from "../../booking/page.module.scss";
 
 const BookingMain = () => {
 
-    const [formMode, setFormMode] = useState('booking_form');
+    const [formMode, setFormMode] = useState('booking_user');
   
     const handleFormChange = (formDetails) => {
       setFormMode('booking_user');
     };
   
     const handleSubmit = (formDetails) => {
-      // setFormMode('booking_user');
+      setFormMode('booking_user');
     };
   
     const renderFormContent = () => {

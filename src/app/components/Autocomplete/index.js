@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import classes from "./index.module.scss";
 
 const Autocomplete = (props) => {
-    const { options, onChange, placeholder, className } = props;
+    const { options, onChange, placeholder, disabled, name } = props;
     
     const dropdownRef = useRef();
 
@@ -33,8 +33,7 @@ const Autocomplete = (props) => {
     }
 
     const handleSelection = (list) => {
-        console.log({list});
-
+        onChange(list, name);
         setSelectedValue(list?.label);
         setOpen(false);
     };
@@ -48,10 +47,11 @@ const Autocomplete = (props) => {
 
     const renderDropdown = () => {
         if (searchValue || isOpen) {
+            let filterdKeys = searchValue ? options.filter(li => (li.label).toLowerCase().indexOf(searchValue?.toLowerCase()) > -1) : options;
             return (
                 <div className={classes.optionsContainer}>
                     <ul>
-                        {options.map(list => (
+                        {filterdKeys.map(list => (
                             (list.type === "heading") ? 
                             <li className={`${classes.lisOption} ${classes.headingOption}`} key={list.label}>{list.label}</li> : 
                             <li className={classes.lisOption} key={list.label} onClick={() => handleSelection(list)}>{list.label}</li>
@@ -65,7 +65,8 @@ const Autocomplete = (props) => {
     const renderMainContent = () => {
         if(!selectedValue){
             return <input placeholder={placeholder} 
-                onFocus={(e) => setOpen(true)} 
+                onFocus={(e) => setOpen(true)}
+                name={name}
                 onChange={handleSearch} 
                 value={searchValue} />
         }
@@ -79,11 +80,9 @@ const Autocomplete = (props) => {
         )
     };
 
-    console.log({isOpen, selectedValue});
-
     return (
         <>
-            <div className={classes.formAutoComplete} ref={dropdownRef}>
+            <div className={classes.formAutoComplete} ref={dropdownRef} disabled={disabled}>
                 {renderMainContent()}
                 {renderDropdown()}
             </div>

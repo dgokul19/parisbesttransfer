@@ -10,7 +10,7 @@ const ReviewBox = ({ content, user }) => {
                     <i className="fa fa-user"></i>
                     <div className={classes.reviewAuthor}>
                         <span>{user.name}</span>
-                        <span>{user.location}</span>
+                        <span>{user.location || `Paris, France`}</span>
                     </div>
                 </div>
             </div>
