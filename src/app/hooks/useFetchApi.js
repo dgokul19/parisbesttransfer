@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 
-const headers = {};
-
 export const useFetchRequest = ( pageKey ) => {
     const [data, setData] = useState([]);
     const [isError, setError] = useState(false);
