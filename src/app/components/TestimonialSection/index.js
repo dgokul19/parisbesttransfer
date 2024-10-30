@@ -27,7 +27,7 @@ const TestimonialSection = () => {
                             <h3> Our Passenger Review !!</h3>
                         </div>
                         <div style={{width : '75%', height : '280px'}}>
-                            <Carousel autoPlay={true} infiniteLoop={true}>
+                            <Carousel showArrows={false} autoPlay={true} infiniteLoop={true}>
                                 <ReviewBox content={content} user={user}/>
                                 <ReviewBox content={content} user={user}/>
                                 <ReviewBox content={content} user={user}/>

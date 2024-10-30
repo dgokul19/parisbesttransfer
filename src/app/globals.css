@@ -202,6 +202,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 
+/* Overriding carousel css */
+
+.carousel .control-dots .dot{
+  background-color: var(--primary) !important;
+}
+
 /* Media Query Mobile [ Max 480px / Min 320px ] */
 
 @media only screen and (max-width: 480px) {
