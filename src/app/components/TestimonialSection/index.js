@@ -1,8 +1,13 @@
+'use client'
+import { Carousel } from 'react-responsive-carousel';
+
 
 // Component
 import ReviewBox from "./ReviewBox";
 
 // CSS
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+
 import classes from "../../styles/index.module.scss";
 
 
@@ -21,8 +26,13 @@ const TestimonialSection = () => {
                             <h4> <span className={classes.highighter}></span> CLIENT FEEDBACKS</h4>
                             <h3> Our Passenger Review !!</h3>
                         </div>
-
-                        <ReviewBox content={content} user={user}/>
+                        <div style={{width : '75%', height : '280px'}}>
+                            <Carousel autoPlay={true} infiniteLoop={true}>
+                                <ReviewBox content={content} user={user}/>
+                                <ReviewBox content={content} user={user}/>
+                                <ReviewBox content={content} user={user}/>
+                            </Carousel>
+                        </div>
                     </div>
                     <div className={classes.faq}>
                         <div className={classes.titleSection}>

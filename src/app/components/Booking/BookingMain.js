@@ -17,7 +17,7 @@ import classes from "../../booking/page.module.scss";
 
 const BookingMain = () => {
 
-    const [formMode, setFormMode] = useState('booking_user');
+    const [formMode, setFormMode] = useState('booking_form');
   
     const handleFormChange = (formDetails) => {
       setFormMode('booking_user');
