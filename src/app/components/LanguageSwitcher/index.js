@@ -19,7 +19,7 @@ const LanguageSwitcher = () => {
 
     return (
         <select className={classes.langDropdown} defaultValue={currentLocale} onChange={handleChangeEvent}>
-            {multiLang.map(lang => <option value={lang.value}>{lang.label}</option>)}
+            {multiLang.map(lang => <option key={lang.value} value={lang.value}>{lang.label}</option>)}
         </select>
     );
 };

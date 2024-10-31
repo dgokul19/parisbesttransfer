@@ -11,7 +11,7 @@ import classes from "../../styles/index.module.scss";
 import Banner from "../../assets/banner-car-1.png";
 
 const HomeBanner = () => {
-    const t = useTranslations('HomeBanner');
+    const t = useTranslations('HomePage');
 
     return (
         <>

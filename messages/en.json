@@ -1,8 +1,57 @@
 {
-    "HomeBanner": {
+    "HomePage": {
         "maintitle": "Book you Taxi from anywhere today !",
         "description": "24/7 Door to Door Private Transfers between CDG Airport, Orly Airport, Beauvais Airport, Disneyland Paris and Paris city.",
         "subtitle" : "Travel securely with us",
-        "button_ride" : "Book Your Ride"
+        "button_ride" : "Book Your Ride",
+        "feature_luxuryVehicles" : "Luxury Vehicles",
+       "feature_24hr_service":  "24/7 Available",
+       "feature_timingService" : "On Time Services",
+       "feature_freeBabySeats" : "Free Baby Seats",
+       "feature_ProfessionalDriver" : "Professional Driver",
+       "feature_reasonable_price" : "Reasonalbe Price",
+       "about_Company_title" : "About our Company", 
+       "about_subHeader":"Feel the difference and Relaxation with Us !",
+       "about_p_content" : "We are specialized in airport transportation and take hundreds of happy customers to the airport every day. Safe and sound, for the best price. Or, if you wish so, we can take you from the airport to any destination in The Paris.",
+       "about_call_taxi" : "Call for Taxi",
+       "fleet_quote" : "LETS GO WITH US",
+       "fleet_header" : "Choose Vehicles to Ride",
+       "fleetBox1_btn" : "Ride Now",
+       "fleetBox1_title" : "Comfort Sedan",
+       "fleetBox1_content" :  "Affordable and comfortable transportation in our economic car for your transfer needs.",
+       "fleetBox2_title" : "Business Car",
+       "fleetBox2_content" :  "Elevate your travel experience with our sleek and professional business car for seamless transfer", 
+       "fleetBox3_title" : "Van",
+       "fleetBox3_content" :  "Efficient and Budget friendly transfers made easy with our spacious economic van",   
+       "fleetBox4_title" : "Business Van",
+       "fleetBox4_content" :  "Experience luxury and convinience with our high end business van, perfect for group transfers and executive travel."
+    },
+    "ServicesPage" : {
+        "section_title" : "What we offer",
+        "section_header" : "Start your journey with PBT taxi services !!",
+        "section_btn" : "Readmore...",
+        "serviceBox1_title" : "Disneyland Transfer",
+        "servicesBox1_content" : "Travelling to the Kingdom of Mickey Mouse ? We provide private transfer to Disneyland Paris from Paris Airports & Train stations",
+        "serviceBox2_title" : "Paris City Tours",
+        "serviceBox2_content" : "Travelling to the most romantic city in the world ? We provide Best luxury tranfers to Paris for afforable price with luxury vehicles.",
+        "serviceBox3_title" : "Paris Airport Transfer",
+        "serviceBox3_content" : "We provide Best luxury & Low cost tranfers from CDG Airport, Orly Airport, Beauvais Airport for afforable price with luxury vehicles."
+    },
+    "testimonialPage" : {
+        "section_title" : "CLIENT FEEDBACKS",
+        "section_header" : "Our Passenger Review !!",
+        "section_title_2" : " Why Choose Us ?",
+        "section_sub_title_2" : "24/7 Door to Door Private Transfers between CDG Airport, Orly Airport, Beauvais Airport, Disneyland Paris and Paris city.",
+        "feature_1" : "Can I complete my reservation, without a credit card?",
+        "feature_1_content" : "During the booking process, you will be allowed to choose the cash payment to the driver, which means you can book without a credit card.",
+        "feature_2" : "What meeting time should I choose if I go to the airport?",
+        "feature_2_content" : "We advise you to plan your pickup for the airport at least 3 hours ahead of your flight departure.",
+        "feature_3" : "Do I have extra charges if the driver needs to wait for me because my flight is delayed?",
+        "feature_3_content" : "Flight delays do not require an additional charges. we will monitor your flight arrival status"
+    },
+    "footerPage" : {
+        "content" : "Paris Best Transfer was established in 2016, We have well experienced multilingual and friendly drivers. We provide you luxurious, stress free & safe transfer for an affordable price.",
+        "quick_links" : "Quick Links",
+        "contact_us" : "Contact us" 
     }
 }
