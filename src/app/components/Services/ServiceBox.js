@@ -12,7 +12,6 @@ const ServiceBox = ({list}) => {
     return (
         <>
             <div className={classes.servicesBox}>
-                
                 <div className={classes.imageBoxElem}>
                     <Image src={list.bgImage} alt={list.title} />
                     <div className={classes.shapeEle}></div>
@@ -23,7 +22,7 @@ const ServiceBox = ({list}) => {
                 <div className={classes.serviceBxContent}>
                     <h4>{list.title}</h4>
                     <p>{list.content}</p>
-                    <Link href="/services"className={classes.readmore}>Readmore..</Link>
+                    <Link href="/booking"className={classes.readmore}>Book Now</Link>
                 </div>
             </div>
         </>

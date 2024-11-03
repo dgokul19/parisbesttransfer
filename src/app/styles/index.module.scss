@@ -240,7 +240,7 @@
         }
 
         h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             line-height: 3rem;
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -428,7 +428,7 @@
             display: flex;
             align-items: center;
             gap: 2rem;
-            margin-top: 30px;
+            margin-top: 20px;
 
             i {
                 width: 60px;
@@ -575,9 +575,9 @@
             .carContent {
                 position: absolute;
                 bottom: -30px;
-                right: -50px;
-                transform: scale(.8);
-                transition: .2s linear all;
+                right: -30px;
+                transform: scale(.9);
+                transition: .3s linear all;
 
                 img {
                     width: 180px;
@@ -587,8 +587,8 @@
 
             &:hover {
                 .carContent {
-                    right: -20px;
-                    transform: scale(1);
+                    right: 0;
+                    transform: scale(1.1);
                 }
 
                 .shapeEle {
@@ -620,7 +620,7 @@
         }
 
         .readmore {
-            width: 100px;
+            width: 110px;
             height: 36px;
             background-color: var(--primary);
             color: var(--white);
@@ -638,7 +638,7 @@
                 background-color: var(--primary);
                 transform: skew(-20deg);
                 position: relative;
-                left: 6px;
+                left: 16px;
             }
         }
     }
@@ -701,7 +701,9 @@
 
         .titleSection {
             gap: 1rem;
-
+            h4{
+                color: var(--white);
+            }
             .highighter {
                 top: 0;
                 background-color: rgba(255, 255, 255, .8);
@@ -843,7 +845,7 @@
             max-width: 340px;
             flex: 1;
             height: 600px;
-            background-image: url('../assets/services-1.jpg');
+            background-image: url('../assets/services-2.jpg');
             background-size: cover;
             background-position: center center;
             border-radius: 4px;
@@ -866,10 +868,10 @@
                 z-index: 1;
             }
             &:nth-child(2){
-                background-image: url('../assets/services-2.jpg');
+                background-image: url('../assets/services-1.jpg');
             }
             &:nth-child(3){
-                background-image: url('../assets/services-3.jpg');
+                background-image: url('../assets/fleet-4.jpg');
                 background-position: center center;
             }
             & > *{
@@ -897,7 +899,7 @@
                 }
             }
             
-            button {
+            a {
                 height: 45px;
                 max-width: 200px;
                 line-height: 45px;
@@ -905,9 +907,12 @@
                 color: var(--white);
                 border: transparent;
                 min-width: 150px;
+                text-align: center;
                 border-radius: 3px;
                 text-transform: uppercase;
-                font-weight: 700;
+                font-weight: 600;
+                font-size: .9rem;
+                color: var(--white);
             }
         }
     }
@@ -959,6 +964,12 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            &.cardPayment{
+                flex-direction: row;
+                li {
+                    font-size: 2.5rem;
+                }
+            }
 
             li {
                 display: flex;
@@ -1023,7 +1034,7 @@
 // Why Choose US Content
 .featureContainer{
     width: 100%;
-    padding: 3rem 0 1rem;
+    padding: 1rem 0;
     .titleSection {
         h4 {
             font-size: 1.5rem;
@@ -1216,6 +1227,7 @@
         & >div {
             flex-direction: column;
             flex-flow: column-reverse;
+            gap: 2rem;
             .leftAbout{
                 width: 100%;
                 img {

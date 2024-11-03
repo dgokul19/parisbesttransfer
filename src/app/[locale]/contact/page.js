@@ -15,12 +15,41 @@ export default function ContactPage() {
   const [ form, setForm ] = useState({
     firstName : '',
     lastName : '',
+    email : '',
+    phone : '',
+    message : ''
   });
 
-  const handleChange = () => {
-
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({
+      ...form,
+      [name] : value
+    })
   };
 
+  const handleSubmit = (e) => {
+    const { firstName, lastName, email, phone, message } = form || {};
+    if(!firstName && !lastName){
+      alert(`Please enter your first name`);
+    } else if(!email) {
+      alert(`Please enter your email address..`);
+    } else if(!phone) {
+      alert(`Please enter your phone number..`);
+    }
+
+    let params = { ...form };
+    console.log({params});
+    // let response = await fetch('https://api.parisbesttransfer.fr/v1/contact', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Accept': 'application/json',
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(params)
+    //   }).json();
+    // let json = await response.json()
+  };
 
   return (
     <div className={classes.page}>
@@ -62,6 +91,7 @@ export default function ContactPage() {
               <div className={formCss.formGroup}>
                 <input placeholder={`First name`}
                   value={form.firstName}
+                  name={`firstName`}
                   onChange={handleChange} />
                 <i className={`fa fa-user`}></i>
               </div>
@@ -69,6 +99,7 @@ export default function ContactPage() {
               <div className={formCss.formGroup}>
                 <input placeholder={`Last name`}
                   value={form.lastName}
+                  name={`lastName`}
                   onChange={handleChange} />
                 <i className={`fa fa-user`}></i>
               </div>
@@ -78,6 +109,7 @@ export default function ContactPage() {
               <div className={formCss.formGroup}>
                 <input placeholder={`Email`}
                   value={form.email}
+                  name={`email`}
                   onChange={handleChange} />
                 <i className={`fa fa-envelope`}></i>
               </div>
@@ -85,6 +117,7 @@ export default function ContactPage() {
               <div className={formCss.formGroup}>
                 <input placeholder={`Phone number`}
                   value={form.phone}
+                  name={`phone`}
                   onChange={handleChange} />
                 <i className={`fa fa-phone`}></i>
               </div>
@@ -94,12 +127,13 @@ export default function ContactPage() {
               <div className={`${formCss.formGroup} ${formCss.heightAuto}`}>
                 <textarea placeholder={`Message`}
                   value={form.message}
+                  name={`message`}
                   onChange={handleChange} />
                 <i className={`fa fa-comment`}></i>
               </div>
             </div>
 
-            <button className={formCss.submitStyle}>Send Message</button>
+            <button className={formCss.submitStyle} onClick={handleSubmit}>Send Message</button>
           </div>
         </div>
       </div>

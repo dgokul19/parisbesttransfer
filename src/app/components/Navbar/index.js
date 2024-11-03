@@ -74,7 +74,8 @@ const NavigationMenu = ({locale}) => {
                                 <li className={`${pathname === '/services' ? 'nav-active' : ''}`}><Link href="/services">Services</Link></li>
                                 <li className={`${pathname === '/testimonial' ? 'nav-active' : ''}`}><Link href="/testimonial">Testimonial</Link></li>
                                 <li className={`${pathname === '/faq' ? 'nav-active' : ''}`}><Link href="/faq">Faq</Link></li>
-                                <li className={`${pathname === '/faq' ? 'nav-active' : ''}`}><Link href="/contact">Contact</Link></li>
+                                <li className={`${pathname === '/blog' ? 'nav-active' : ''}`}><Link href="/blog">Blog</Link></li>
+                                <li className={`${pathname === '/contact' ? 'nav-active' : ''}`}><Link href="/contact">Contact</Link></li>
                             </ul>
                         </div>)}
                         

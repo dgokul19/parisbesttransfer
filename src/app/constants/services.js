@@ -11,7 +11,7 @@ export const SERVICES_DATA = [
     },
     {
         id : '2',
-        title : 'Paris City Tours',
+        title : 'Paris City Tours & Day Trip',
         content : 'Travelling to the most romantic city in the world ? We provide Best luxury tranfers to Paris for afforable price with luxury vehicles.',
         bgImage: ParisCityTours
     },

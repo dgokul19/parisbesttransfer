@@ -13,13 +13,17 @@ import FooterComponent from "../components/Footer";
 
 import { TESTIMONIAL_FEEDBACKS } from "../constants/testimonial";
 
+// Hooks
+import { useFetchRequest } from "../hooks/useFetchApi";
+
 // CSS
 import classes from "../styles/index.module.scss";
 
 export default function TestimonialComponent() {
 
-  const [feedbacks, setFeedbacks] = useState([...TESTIMONIAL_FEEDBACKS]);
+  const { data, error, errorMessage } = useFetchRequest('testimonials');
 
+  console.log({data, error, errorMessage});
   return (
     <div className={classes.page}>
         <NavigationMenu />        
@@ -27,7 +31,8 @@ export default function TestimonialComponent() {
 
         <div className={classes.testimonialContainer}>
           <div className="container flex">
-              {feedbacks.map((review,idx) => <ReviewBox key={idx.toString()} content={review.content} user={review.user}/>)}
+              {data?.length && data.map((review,idx) => <ReviewBox key={idx.toString()} content={review.content} user={review}/>)}
+              {error && <div className="error-content">Error on loading, Please try again later !!</div>}
           </div>
         </div>
         <Services />

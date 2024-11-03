@@ -25,18 +25,20 @@ const FleetComponent = () => {
                         </div>
                         <div className={classes.fleetContentBx}>
                             <h4>Comfort Sedan</h4>
-                            <p>Affordable and comfortable transportation  in our economic car for your transfer needs.</p>
+                            <p>Affordable and comfortable transportation  in our economic car for your transfer needs. </p>
+                            <strong>upto 3 passengers</strong>
                             <Link href='/booking'>Ride Now</Link>
                         </div>
                     </div>
 
                     <div className={classes.fleetBox}>
                         <div className={classes.fleetImage}>
-                            <Image src={Fleet2} alt={`Fleet Type 2 - Business Car`}/>
+                            <Image src={Fleet2} alt={`Fleet Type 2 - Business Van`}/>
                         </div>
                         <div className={classes.fleetContentBx}>
-                            <h4>Business Car</h4>
-                            <p>Elevate your travel experience with our sleek and professional business car for seamless transfer</p>
+                            <h4>Business Van (Caravelle)</h4>
+                            <p>Elevate your travel experience with our sleek and professional business van for seamless transfer</p>
+                            <strong>upto 8 passengers</strong>
                             <Link href='/booking'>Ride Now</Link>
                         </div>
                     </div>
@@ -45,19 +47,21 @@ const FleetComponent = () => {
                             <Image src={Fleet3} alt={`Fleet Type 3 - Van`}/>
                         </div>
                         <div className={classes.fleetContentBx}>
-                            <h4>Van</h4>
-                            <p>Efficient and Budget friendly transfers made easy with our spacious economic van</p>
+                            <h4>Business Van (Class V)</h4>
+                            <p>Efficient and Budget friendly transfers made easy with our spacious business van</p>
+                            <strong>upto 7 passengers</strong>
                             <Link href='/booking'>Ride Now</Link>
                         </div>
                     </div>
                     <div className={classes.fleetBox}>
                         <div className={classes.fleetImage}>
-                            <Image src={Fleet4} alt={`Fleet Type 4 - Business Van`}/>
+                            <Image src={Fleet4} alt={`Fleet Type 4 - Bus`}/>
                         </div>
                         <div className={classes.fleetContentBx}>
-                            <h4>Business Van</h4>
-                            <p>Experience luxury and convinience with our  high end business van, perfect for group transfers and executive  travel.</p>
-                            <Link href='/booking'>Ride Now</Link>
+                            <h4>Bus</h4>
+                            <p>Experience luxury and convinience with our  high end business bus, perfect for group transfers and executive  travel.</p>
+                            <strong>For more info: contact</strong>
+                            <a href='mailto:info@parisbesttransfer.com'>Email</a>
                         </div>
                     </div>
                 </div>
