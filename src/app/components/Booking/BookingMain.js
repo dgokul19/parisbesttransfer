@@ -6,7 +6,7 @@ import BookingForm from "./BookingForm";
 import BookingDetails from "./BookingDetails";
 
 // CSS
-import classes from "../../booking/page.module.scss";
+import classes from "../../[locale]/booking/page.module.scss";
 
 /* 
   Form Types

@@ -4,10 +4,10 @@ import { useState } from "react";
 import NavigationMenu from "../../components/Navbar";
 import SubBanner from "../../components/SubBanner";
 
-import BookingMain from "../components/Booking/BookingMain";
-import CabServices from "../components/Services";
-import TestimonialSection from "../components/TestimonialSection";
-import FooterComponent from "../components/Footer";
+import BookingMain from "../../components/Booking/BookingMain";
+import CabServices from "../../components/Services";
+import TestimonialSection from "../../components/TestimonialSection";
+import FooterComponent from "../../components/Footer";
 
 // CSS
 import classes from "./page.module.scss";
