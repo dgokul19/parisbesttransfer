@@ -28,9 +28,9 @@ const TestimonialSection = () => {
                         </div>
                         <div style={{width : '75%', height : '280px'}}>
                             <Carousel autoPlay={true} showThumbs={false} infiniteLoop={true}>
-                                <ReviewBox content={content} user={user}/>
-                                <ReviewBox content={content} user={user}/>
-                                <ReviewBox content={content} user={user}/>
+                                <ReviewBox isHomeScreen={true} content={content} user={user}/>
+                                <ReviewBox isHomeScreen={true} content={content} user={user}/>
+                                <ReviewBox isHomeScreen={true} content={content} user={user}/>
                             </Carousel>
                         </div>
                     </div>

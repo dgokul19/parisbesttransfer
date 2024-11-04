@@ -773,6 +773,11 @@
     line-height: 1.8rem;
     gap: 1rem;
     position: relative;
+    &.homeReviewBx{
+        .topIcon{
+            display: none;
+        }    
+    }
     .topIcon{
         width: 40px;
         height: 45px;

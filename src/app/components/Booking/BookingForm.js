@@ -100,15 +100,19 @@ const BookingForm = ({ form, setForm, onFormSubmit, locations }) => {
                                     options={locations}>
                                 </Autocomplete>
                             </div>
-                            {form.from_location === 'Custom' && <div className={classes.formGroup}>
-                                <input
-                                    placeholder={`Enter the pickup location`}
-                                    onChange={handleChange}
-                                    value={form.custom_from_location}
-                                    name={`custom_from_location`}
-                                />
-                            </div>}
                         </div>
+
+                        {form.from_location === 'Custom' &&
+                            <div className={classes.formRow}>
+                                <div className={classes.formGroup}>
+                                    <input
+                                        placeholder={`Enter the pickup location`}
+                                        onChange={handleChange}
+                                        value={form.custom_from_location}
+                                        name={`custom_from_location`}
+                                    />
+                                </div>
+                            </div>}
 
                         <div className={`flex-column ${classes.formRow}`}>
                             <label className={classes.mobileLabel}>Pickup Date</label>
@@ -141,14 +145,18 @@ const BookingForm = ({ form, setForm, onFormSubmit, locations }) => {
                                     options={locations}>
                                 </Autocomplete>
                             </div>
-                            {form.to_location === 'Custom' && <div className={classes.formGroup}>
-                                <input
-                                    placeholder={`Enter the dropoff location`}
-                                    onChange={handleChange}
-                                    value={form.custom_to_location}
-                                    name={`custom_to_location`} />
-                            </div>}
                         </div>
+
+                        {form.to_location === 'Custom' &&
+                            <div className={classes.formRow}>
+                                <div className={classes.formGroup}>
+                                    <input
+                                        placeholder={`Enter the dropoff location`}
+                                        onChange={handleChange}
+                                        value={form.custom_to_location}
+                                        name={`custom_to_location`} />
+                                </div>
+                            </div>}
 
                         <div className={`flex-column ${classes.formRow}`}>
                             <label className={classes.mobileLabel}>Pickup time</label>

@@ -1,9 +1,9 @@
 // CSS
 import classes from "../../styles/index.module.scss";
 
-const ReviewBox = ({ content, user }) => {
+const ReviewBox = ({ content, user, isHomeScreen=false}) => {
     return (
-            <div className={classes.reviewBox}>
+            <div className={`${isHomeScreen ? classes.homeReviewBx : null} ${classes.reviewBox}`}>
                 <div className={classes.topIcon}><i className="fa fa-quote-right"></i></div>
                 <p>{content}</p>
                 <div className={classes.reviewAuth}>
