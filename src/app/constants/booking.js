@@ -52,6 +52,34 @@ export const optionsList = [
   { label: 'Holiday Inn Beavais Airport', type: 'option', value: 'Holiday Inn Beavais Airport' },
 ];
 
+export const BOOKING_FORM = {
+  from_location: '',
+  to_location: '',
+  pickup_date: null,
+  pickup_time: null,
+  locationDetails: '',
+  passengers_count: '',
+  is_return_transfer: false,
+  custom_from_location : '',
+  custom_to_location : '',
+  rate_charge: '0.00',
+};
+
+export const BOOKING_USER = {
+  first_name: '',
+  last_name: '',
+  email: '',
+  phone: '',
+  flightNo: '',
+  luggageCount: 1,
+  payment_option: 'paybycash',
+  baby_seat: false,
+  booster_seat: false,
+  special_notes: '',
+};
+
+
+
 /* 
   [
    { type : AIRPORT,  children : [Orly, Beauvais, CDG] },

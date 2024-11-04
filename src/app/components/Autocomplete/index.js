@@ -4,13 +4,13 @@ import { useState, useEffect, useRef } from "react";
 import classes from "./index.module.scss";
 
 const Autocomplete = (props) => {
-    const { options, onChange, placeholder, disabled, name } = props;
+    const { options, onChange, value, placeholder, disabled, name } = props;
     
     const dropdownRef = useRef();
 
     const [isOpen, setOpen] = useState(false);
     const [searchValue, setSearchValue] = useState('');
-    const [selectedValue, setSelectedValue] = useState('');
+    const [selectedValue, setSelectedValue] = useState(value || '');
 
     useEffect(() => {
         const handler = (event) => {

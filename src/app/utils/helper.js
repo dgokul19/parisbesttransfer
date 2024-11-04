@@ -30,6 +30,6 @@ export const handleTimeFormat = (date = new Date()) => {
     let hours = date.getHours();
     let time = date.getMinutes();
 
-    return `${hours}:${time}`
+    return `${String(hours).padStart(2, "0")}:${String(time).padStart(2, "0")}`;
 };
 
