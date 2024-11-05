@@ -3,6 +3,7 @@ import { useState } from "react";
 
 // Components
 import CancelModal from "./CancelModal";
+import LoaderComponent from "../components/Loader";
 
 // Static
 import { 
@@ -20,6 +21,7 @@ const BookingDetails = ({ uuid, booking }) => {
     const [form, setForm] = useState({...booking });
     const [isCancelMode, setCancelMode] = useState(false);
     const [isEditMode, setEditMode] = useState(false);
+    const [isLoading, setLoading] = useState(false);
 
     const handleChange = (e) => {
         let { name, value, checked } = e.target || {}; 
@@ -39,6 +41,7 @@ const BookingDetails = ({ uuid, booking }) => {
             params.status = 'CANCELLED';
         }
         try {
+            setLoading(true);
             let url = `https://api.parisbesttransfer.fr/v1/booking`;
             if(uuid){
                 url = `${url}?uuid=${uuid}`
@@ -54,6 +57,7 @@ const BookingDetails = ({ uuid, booking }) => {
                     body: JSON.stringify(params)
                 });
                 let json = await response.json();
+                setLoading(false);
                 if (json.success) {
                     let message = isCancel ? `Booking cancelled Successfully !!`: `Booking Updated Successfully !!`;
                     setEditMode(false);
@@ -61,9 +65,14 @@ const BookingDetails = ({ uuid, booking }) => {
                     alert(message);
                 } else {
                     let message = isCancel ? `Booking cancellation Failed !!`: `Booking Update Failed !!`;
-                    alert(`${message}, Please contact us via call/email`);
+                    if(json.detail){
+                        message = json.detail;
+                    }
+                    alert(message);
+                    setCancelMode(false);
                 }
             } catch(er){
+                setLoading(false);
                 let message = isCancel ? `Booking cancellation Failed !!`: `Booking Update Failed !!`;
                 alert(`${message}, Please contact us via call/email`);
                 alert(`Error: ${er}`);
@@ -128,6 +137,7 @@ const BookingDetails = ({ uuid, booking }) => {
             </div>
             {isEditMode && <div className={classes.submitStyle} onClick={handleSubmit}>Submit</div>}
             {<CancelModal isOpen={isCancelMode} bookingInfo={booking} onCancel={() => setCancelMode(false)} onConfirm={onModalConfirm} />}
+            {isLoading && <LoaderComponent/>}
         </>
     )
 }
