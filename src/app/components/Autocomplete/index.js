@@ -33,9 +33,10 @@ const Autocomplete = (props) => {
     }
 
     const handleSelection = (list) => {
+        setOpen(false);
         onChange(list, name);
         setSelectedValue(list?.label);
-        setOpen(false);
+        setSearchValue('');
     };
 
     const clearSelectionValue = () => {
@@ -43,7 +44,6 @@ const Autocomplete = (props) => {
         setSearchValue('');
         setOpen(true);
     };
-
 
     const renderDropdown = () => {
         if (searchValue || isOpen) {
@@ -73,7 +73,7 @@ const Autocomplete = (props) => {
         return (
             <>
                 <div className={classes.selectedContent}>
-                    <label className={classes.selectedLabel}>{selectedValue}</label>
+                    <label className={classes.selectedLabel} onClick={() =>  setOpen(true)}>{selectedValue}</label>
                     <i className="fa fa-close" onClick={clearSelectionValue}></i>
                 </div>
             </>

@@ -1,0 +1,150 @@
+.page {
+    padding: 0px;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+.manageContainer{
+    width: 100%;
+    background-color: var(--dirty-white);
+    
+    & > div {
+        padding : 5rem 0;
+        flex-direction: column;
+        h3{
+            font-size: 2rem;
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            span{
+                color: var(--black);
+            }
+        }
+    }
+
+    .findBookingsForm{
+        display: flex;
+        border: 1px solid var(--primary);
+        padding: 1rem;
+        border-radius: 40px;
+        gap: 1rem;
+
+        .searchIcon{
+            width: 55px;
+            height: 55px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 30px;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            transition: .1s linear all;
+            &:hover {
+                transform: scale(.9);
+                box-shadow: 0px 1px 3px rgba(0,0,0,.8);
+            }
+        }
+    }
+}
+.leftBorder{
+    border-left: 1px solid var(--primary);
+}
+
+.formEleme{
+    flex: 1;
+    height: 55px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: transparent;
+    input{
+        flex: 1;
+        height: 100%;
+        border: none;
+        text-indent: 10px;
+        background-color: transparent;
+        font-size: .9rem;
+        font-weight: 500;
+        outline: none;
+    }
+}
+
+.booking_option_bar{
+    width: 70%;
+    margin: auto;
+    height: 40px;
+    // border-bottom: 1px solid rgba(0,0,0,.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    ul{
+        list-style: none;
+        margin: 0;
+        display: flex;
+        gap: 10px;
+        li {
+            button {
+                padding: 10px 20px;
+                background-color: var(--dirty-white);
+                border:1px solid var(--primary);border-radius: 30px;
+                cursor: pointer;
+            }
+            &:nth-child(2){
+                button {
+                    background-color: var(--primary);
+                    color: var(--white);
+                }
+            }
+        }
+    }
+}
+
+.submitStyle{
+    margin: 1rem  auto;
+    height: 40px;
+    width: 120px;
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    line-height: 40px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.bookedContent{
+    width: 70%;
+    margin: auto;
+    height: auto;
+    margin-top: 3rem;
+    border:1px solid var(--primary);
+    border-bottom: none;
+    .bookedFormRow{
+        display: flex;
+        border-bottom:1px solid var(--primary);
+
+        .labelName,.labelValue{
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            height: 55px;
+            text-indent: 1rem;
+        }
+        .labelValue{
+            border-left: 1px solid var(--primary);
+            input {
+                border: 1px solid rgba(0,0,0,.2);
+                height: 36px;
+                width: 100%;
+                text-indent: 10px;
+                background-color: transparent;
+            }
+            input[type="checkbox"]{
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}
+

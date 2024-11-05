@@ -22,7 +22,7 @@ const FooterComponent = () => {
                             <li><Link href='/booking'> Booking </Link></li>
                             <li><Link href='/services'> Services </Link></li>
                             <li><Link href='/faq'> Faq </Link></li>
-                            <li><Link href='/cancel-booking'> Booking Cancellation </Link></li>
+                            <li><Link href='/manage_booking'> Manage Booking </Link></li>
                         </ul>
                     </div>
                     <div className={classes.footerBx}>

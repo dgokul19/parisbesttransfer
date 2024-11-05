@@ -70,6 +70,7 @@ const NavigationMenu = () => {
                                 <li className={`${pathname === '/faq' ? 'nav-active' : ''}`}><Link href="/faq">Faq</Link></li>
                                 <li className={`${pathname === '/blog' ? 'nav-active' : ''}`}><Link href="/blog">Blog</Link></li>
                                 <li className={`${pathname === '/contact' ? 'nav-active' : ''}`}><Link href="/contact">Contact</Link></li>
+                                <li className={`${pathname === '/manage_booking' ? 'nav-active' : ''}`}><Link href="/manage_booking">Manage Booking</Link></li>
                             </ul>
                         </div>)}
                         

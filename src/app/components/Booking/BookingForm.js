@@ -64,7 +64,7 @@ const BookingForm = ({ form, setForm, onFormSubmit, locations }) => {
                 let json = await response.json();
                 if (json && json?.rate) {
                     formClone.trip = json;
-                    formClone.rate_charge = json.rate.toFixed(2);
+                    formClone.rate_charge = json?.rate;
                     setForm(formClone);
                 } else {
                     setForm(formClone);
@@ -125,13 +125,6 @@ const BookingForm = ({ form, setForm, onFormSubmit, locations }) => {
                                     onChange={handleChange} />
                             </div>
                         </div>
-
-                        <div className={classes.formRow}>
-                            <input
-                                className='css-checkbox' name={`is_return_transfer`} id={'return_checkBox'} type="checkbox"
-                                value={form.is_return_transfer} onChange={handleChange} />
-                            <label htmlFor="return_checkBox">Add Return Transfer</label>
-                        </div>
                     </div>
                     {/* Content ****----RIGHT----**** Side in the Form */}
                     <div className={classes.contentColumn}>
@@ -182,6 +175,13 @@ const BookingForm = ({ form, setForm, onFormSubmit, locations }) => {
                         </select>
                         <i className={`fa fa-users`}></i>
                     </div>
+                </div>
+
+                <div className={classes.formRow}>
+                    <input
+                        className='css-checkbox' name={`is_return_transfer`} id={'return_checkBox'} type="checkbox"
+                        value={form.is_return_transfer} onChange={handleChange} />
+                    <label htmlFor="return_checkBox">Add Return Transfer</label>
                 </div>
 
                 <div className={classes.priceGroup}>

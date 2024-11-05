@@ -147,6 +147,11 @@
                         color: var(--primary);
                     }
                 }
+                li{
+                    &:last-child{
+                        display: none;
+                    }
+                }
             }
         }
         .mobileMenuIcon{
@@ -1180,6 +1185,11 @@
                 ul {
                     gap: 1rem;
                     flex-direction: column;
+                    li{
+                        &:last-child{
+                            display: block;
+                        }
+                    }
                 }
             }
             .bookNowElem{
