@@ -13,6 +13,7 @@ import { BOOKING_FORM } from "@/app/constants/booking";
 import BookingForm from "./BookingForm";
 import BookingDetails from "./BookingDetails";
 import BookingSuccess from "./BookingSuccess";
+import LoaderComponent from "../Loader/index";
 
 // CSS
 import classes from "../../booking/page.module.scss";
@@ -27,6 +28,8 @@ import classes from "../../booking/page.module.scss";
 
 const BookingMain = () => {
 
+  const [isLoading, setLoading] = useState(false);
+
   const [form, setForm] = useState({ 
     ...BOOKING_FORM, 
     pickup_date : handleDateFormat(),
@@ -40,11 +43,14 @@ const BookingMain = () => {
   useEffect(() => {
     const fetchRequestApi = async () => {
       try {
+        setLoading(true);
         let response = await fetch(`https://api.parisbesttransfer.fr/v1/locations?language=${'en'}`);
         let json = await response.json();
         setLocationOptions(json);
+        setLoading(false);
       } catch (ex) {
         console.log('ex', ex);
+        setLoading(false);
       }
     };
     fetchRequestApi();
@@ -73,6 +79,7 @@ const BookingMain = () => {
       <div className="container flex justify-content-center">
         {renderFormContent()}
       </div>
+      {isLoading && <LoaderComponent />}
     </div>
   );
 }

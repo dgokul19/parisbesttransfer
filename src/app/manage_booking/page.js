@@ -8,23 +8,27 @@ import SubBanner from "../components/SubBanner";
 import FooterComponent from "../components/Footer";
 import SearchBooking from './SearchBooking';
 import BookingDetails from './BookingDetails';
+import LoaderComponent from '../components/Loader';
 
 // CSS
 import classes from "./page.module.scss";
 
 export default function ManageBooking() {
-    const searchParams = useSearchParams()
+    const searchParams = useSearchParams();
     const uuid = searchParams.get('uuid');
 
+    const [isLoading,  setLoading] = useState(false);
     const [error,  setError] = useState(false);
     const [reference,  setReference] = useState({});
     
     const fetchBookingApi = async (searchUrl) => {
         try {
+            setLoading(true);
             let url = `https://api.parisbesttransfer.fr/v1/booking?${searchUrl}`;
            
                 let response = await fetch(url);
                 let json = await response.json();
+                setLoading(false);
                 if (json.booking_ref) {
                     setReference(json);
                 } else {
@@ -32,6 +36,7 @@ export default function ManageBooking() {
                     alert(`Not able to get any relevant record, Please try again !!`);
                 }
             } catch(er){
+                setLoading(false);
                 alert(`Something error happened, Please contact us !!`);
                 alert(`Error: ${er}`);
             }
@@ -61,6 +66,7 @@ export default function ManageBooking() {
                 </div>
             </div>
             <FooterComponent />
+            {isLoading && <LoaderComponent />}
         </div>
     );
 }
