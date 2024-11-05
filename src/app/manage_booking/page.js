@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation'
 
 // Components
@@ -53,7 +53,8 @@ export default function ManageBooking() {
     },[uuid]);
 
     return (
-        <div className={classes.page}>
+        <Suspense>
+            <div className={classes.page}>
             <NavigationMenu />
             <SubBanner title={'Manage Bookings'} route={'Manage Bookings'} />
 
@@ -68,5 +69,6 @@ export default function ManageBooking() {
             <FooterComponent />
             {isLoading && <LoaderComponent />}
         </div>
+        </Suspense>
     );
 }
