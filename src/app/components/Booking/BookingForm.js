@@ -18,7 +18,7 @@ const BookingForm = ({ form, setForm, onFormSubmit, locations }) => {
     const handleChange = (e) => {
         let { name, value, checked } = e.target;
         if (name === `isReturnTransfer`) {
-            value = checked
+            value = checked;
         }
         setForm({
             ...form,
@@ -186,7 +186,7 @@ const BookingForm = ({ form, setForm, onFormSubmit, locations }) => {
 
                 <div className={classes.priceGroup}>
                     <label>Total Fare</label>
-                    {form.passengers_count && (<label className={classes.rateCallMethod} onClick={fetchRateApiMethod}><i className="fa fa-refresh"></i> Get rate </label>)}
+                    {form.passengers_count && (<label className={classes.rateCallMethod} onClick={() => fetchRateApiMethod({target: {value : form.passengers_count}})}><i className="fa fa-refresh"></i> Get rate </label>)}
                     <span className={classes.rateValue}>{form.rate_charge} <i className="fa fa-euro"></i> ( Tax Included )</span>
 
                     <button className={classes.submitStyle} disabled={!form.passengers_count} onClick={() => handleSubmit(form)}>Book Ride</button>

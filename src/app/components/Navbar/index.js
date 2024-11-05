@@ -82,7 +82,7 @@ const NavigationMenu = () => {
                             </div>
                         )}
                         <div className={classes.bookNowElem}>
-                            <Link href="/booking">Book a Taxi</Link>
+                            <Link href="/manage_booking">Manage Booking</Link>
                         </div>
                     </div>
                 </div>

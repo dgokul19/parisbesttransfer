@@ -2,34 +2,36 @@
     padding: 0px;
     height: 100vh;
     width: 100vw;
-  }
-  
-.manageContainer{
+}
+
+.manageContainer {
     width: 100%;
     background-color: var(--dirty-white);
-    
-    & > div {
-        padding : 5rem 0;
+
+    &>div {
+        padding: 5rem 0;
         flex-direction: column;
-        h3{
+
+        h3 {
             font-size: 2rem;
             text-align: center;
             color: var(--primary);
             margin-bottom: 1rem;
-            span{
+
+            span {
                 color: var(--black);
             }
         }
     }
 
-    .findBookingsForm{
+    .findBookingsForm {
         display: flex;
         border: 1px solid var(--primary);
         padding: 1rem;
         border-radius: 40px;
         gap: 1rem;
 
-        .searchIcon{
+        .searchIcon {
             width: 55px;
             height: 55px;
             background-color: var(--primary);
@@ -39,26 +41,29 @@
             place-items: center;
             cursor: pointer;
             transition: .1s linear all;
+
             &:hover {
                 transform: scale(.9);
-                box-shadow: 0px 1px 3px rgba(0,0,0,.8);
+                box-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
             }
         }
     }
 }
-.leftBorder{
+
+.leftBorder {
     border-left: 1px solid var(--primary);
 }
 
-.formEleme{
-    flex: 1;
+.formEleme {
+    flex-grow: 1;
     height: 55px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     background-color: transparent;
-    input{
+
+    input {
         flex: 1;
         height: 100%;
         border: none;
@@ -70,7 +75,7 @@
     }
 }
 
-.booking_option_bar{
+.booking_option_bar {
     width: 70%;
     margin: auto;
     height: 40px;
@@ -79,19 +84,23 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 3rem;
-    ul{
+
+    ul {
         list-style: none;
         margin: 0;
         display: flex;
         gap: 10px;
+
         li {
             button {
                 padding: 10px 20px;
                 background-color: var(--dirty-white);
-                border:1px solid var(--primary);border-radius: 30px;
+                border: 1px solid var(--primary);
+                border-radius: 30px;
                 cursor: pointer;
             }
-            &:nth-child(2){
+
+            &:nth-child(2) {
                 button {
                     background-color: var(--primary);
                     color: var(--white);
@@ -101,8 +110,8 @@
     }
 }
 
-.submitStyle{
-    margin: 1rem  auto;
+.submitStyle {
+    margin: 1rem auto;
     height: 40px;
     width: 120px;
     background-color: var(--primary);
@@ -112,18 +121,21 @@
     border-radius: 30px;
     cursor: pointer;
 }
-.bookedContent{
+
+.bookedContent {
     width: 70%;
     margin: auto;
     height: auto;
     margin-top: 3rem;
-    border:1px solid var(--primary);
+    border: 1px solid var(--primary);
     border-bottom: none;
-    .bookedFormRow{
-        display: flex;
-        border-bottom:1px solid var(--primary);
 
-        .labelName,.labelValue{
+    .bookedFormRow {
+        display: flex;
+        border-bottom: 1px solid var(--primary);
+
+        .labelName,
+        .labelValue {
             flex: 1;
             display: flex;
             align-items: center;
@@ -131,16 +143,19 @@
             height: 55px;
             text-indent: 1rem;
         }
-        .labelValue{
+
+        .labelValue {
             border-left: 1px solid var(--primary);
+
             input {
-                border: 1px solid rgba(0,0,0,.2);
+                border: 1px solid rgba(0, 0, 0, .2);
                 height: 36px;
                 width: 100%;
                 text-indent: 10px;
                 background-color: transparent;
             }
-            input[type="checkbox"]{
+
+            input[type="checkbox"] {
                 width: 20px;
                 height: 20px;
             }
@@ -149,12 +164,12 @@
 }
 
 
-.cancelWrapper{
+.cancelWrapper {
     width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0, 0, 0, .6);
     position: fixed;
     overflow: hidden;
     display: flex;
@@ -163,12 +178,15 @@
     z-index: 999;
     transition: .1s ease-in all;
     visibility: hidden;
-    &.isOpen{
+
+    &.isOpen {
         visibility: visible;
-        .cancelModal{
+
+        .cancelModal {
             transform: scale(1);
         }
     }
+
     .cancelModal {
         width: 45%;
         min-height: 150px;
@@ -180,29 +198,33 @@
         flex-direction: column;
         transition: .2s linear all;
         transform: scale(0);
-        
-        .closeIc{
+
+        .closeIc {
             position: absolute;
             right: 10px;
             top: 10px;
             cursor: pointer;
         }
+
         .modalTitle {
             font-size: 1.6rem;
             text-align: center;
             font-weight: bold;
             color: var(--primary);
         }
-        .modalContent{
+
+        .modalContent {
             text-align: center;
             font-weight: 500;
         }
-        .modalFoot{
+
+        .modalFoot {
             display: flex;
             margin-top: 1rem;
             gap: 1rem;
             justify-content: center;
             align-items: center;
+
             button {
                 background-color: var(--white);
                 padding: 10px 20px;
@@ -210,10 +232,57 @@
                 color: var(--primary);
                 border: 1px solid var(--primary);
                 cursor: pointer;
+
                 &.confirmBtn {
                     background-color: var(--primary);
                     color: var(--white);
                 }
+            }
+        }
+    }
+}
+
+// Media Query Mobile [ Max 480px / Min 320px ]
+
+@media only screen and (max-width: 600px) {
+    .manageContainer {
+        padding: 0 10px;
+        .findBookingsForm {
+            flex-direction: column;
+            border-radius: 0px;
+            padding: 6px;
+            border: none;
+            .formEleme{
+                border: 1px solid var(--primary);
+            }
+            .searchIcon{
+                margin: 0 auto;
+            }
+        }
+        .booking_option_bar{
+            width: 90%;
+            height: auto;
+            flex-direction: column;
+            margin-top: 1rem;
+        }
+        .bookedContent{
+            width: 100%;
+            margin-top: 1rem;
+            .labelName, .labelValue{
+                width: 50%;
+                padding: 5px;
+                text-indent: 0;
+            }
+        }
+    }
+    .cancelWrapper{
+        .cancelModal{
+            width: 90%;
+            .modalTitle{
+                font-size: 1.2rem;
+            }
+            .modalContent{
+                font-size: .9rem;
             }
         }
     }
