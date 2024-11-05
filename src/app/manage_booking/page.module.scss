@@ -148,3 +148,73 @@
     }
 }
 
+
+.cancelWrapper{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.6);
+    position: fixed;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: .1s ease-in all;
+    visibility: hidden;
+    &.isOpen{
+        visibility: visible;
+        .cancelModal{
+            transform: scale(1);
+        }
+    }
+    .cancelModal {
+        width: 45%;
+        min-height: 150px;
+        position: relative;
+        background-color: var(--white);
+        padding: 1rem;
+        display: flex;
+        gap: .8rem;
+        flex-direction: column;
+        transition: .2s linear all;
+        transform: scale(0);
+        
+        .closeIc{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+        }
+        .modalTitle {
+            font-size: 1.6rem;
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .modalContent{
+            text-align: center;
+            font-weight: 500;
+        }
+        .modalFoot{
+            display: flex;
+            margin-top: 1rem;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            button {
+                background-color: var(--white);
+                padding: 10px 20px;
+                border-radius: 4px;
+                color: var(--primary);
+                border: 1px solid var(--primary);
+                cursor: pointer;
+                &.confirmBtn {
+                    background-color: var(--primary);
+                    color: var(--white);
+                }
+            }
+        }
+    }
+}

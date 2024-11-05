@@ -9,9 +9,6 @@ import FooterComponent from "../components/Footer";
 import SearchBooking from './SearchBooking';
 import BookingDetails from './BookingDetails';
 
-// Static
-import { BOOKING_MOCK } from "../constants/booking";
-
 // CSS
 import classes from "./page.module.scss";
 
@@ -43,6 +40,10 @@ export default function ManageBooking() {
     useEffect(() => {
         if(uuid){
             fetchBookingApi(`uuid=${uuid}`);
+        }
+        return () => {
+            setReference({});
+            setError(false);
         }
     },[uuid]);
 

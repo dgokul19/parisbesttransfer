@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
 
+// Components
+import CancelModal from "./CancelModal";
+
 // Static
 import { 
     BOOLEAN_FIELDS, 
@@ -15,7 +18,7 @@ const labels = Object.entries(BOOKING_LABEL);
 
 const BookingDetails = ({ uuid, booking }) => {
     const [form, setForm] = useState({...booking });
-    // const [isCancelMode, setCancelMode] = useState(false);
+    const [isCancelMode, setCancelMode] = useState(false);
     const [isEditMode, setEditMode] = useState(false);
 
     const handleChange = (e) => {
@@ -29,9 +32,13 @@ const BookingDetails = ({ uuid, booking }) => {
         })
     };
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (isCancel = false) => {
+        let params = {...form };
+
+        if(isCancel){
+            params.status = 'CANCELLED';
+        }
         try {
-            let params = {...form };
             let url = `https://api.parisbesttransfer.fr/v1/booking`;
             if(uuid){
                 url = `${url}?uuid=${uuid}`
@@ -48,15 +55,24 @@ const BookingDetails = ({ uuid, booking }) => {
                 });
                 let json = await response.json();
                 if (json.success) {
+                    let message = isCancel ? `Booking cancelled Successfully !!`: `Booking Updated Successfully !!`;
                     setEditMode(false);
-                    alert(`Booking Updated Successfully !!`)
+                    setCancelMode(false);
+                    alert(message);
                 } else {
-                    alert(`Booking update failed, Please contact us via call/email`);
+                    let message = isCancel ? `Booking cancellation Failed !!`: `Booking Update Failed !!`;
+                    alert(`${message}, Please contact us via call/email`);
                 }
             } catch(er){
-                alert(`Booking update failed, Please contact us via call/email`);
+                let message = isCancel ? `Booking cancellation Failed !!`: `Booking Update Failed !!`;
+                alert(`${message}, Please contact us via call/email`);
                 alert(`Error: ${er}`);
             }
+    };
+
+
+    const onModalConfirm = () => {
+        handleSubmit(true);
     };
 
     const renderContent = (labelKey) => {
@@ -65,6 +81,15 @@ const BookingDetails = ({ uuid, booking }) => {
                 if(BOOLEAN_FIELDS.includes(labelKey)){
                     return <input type={`checkbox`} name={labelKey} checked={form[labelKey]} value={form[labelKey]} onChange={handleChange}/>
                 }
+
+                if(labelKey === 'pickup_date'){
+                    return <input type={`date`} name={labelKey} value={form[labelKey] || ''} onChange={handleChange}/>
+                }
+
+                if(labelKey === 'pickup_time'){
+                    return <input type={`time`} name={labelKey} value={form[labelKey] || ''} onChange={handleChange}/>
+                }
+
                 return <input name={labelKey} value={form[labelKey] || ''} onChange={handleChange}/>
             }
             return form[labelKey];
@@ -83,7 +108,7 @@ const BookingDetails = ({ uuid, booking }) => {
                 <ul>
                     {!isEditMode && <li><button onClick={() => setEditMode(true)}>Edit Booking</button></li>}
                     {isEditMode && <li><button onClick={() => setEditMode(false)}>Cancel Edit</button></li>}
-                    <li><button>Cancel Booking</button></li>
+                    <li><button onClick={() => setCancelMode(true)}>Cancel Booking</button></li>
                 </ul>
             </div>
 
@@ -102,6 +127,7 @@ const BookingDetails = ({ uuid, booking }) => {
                 }
             </div>
             {isEditMode && <div className={classes.submitStyle} onClick={handleSubmit}>Submit</div>}
+            {<CancelModal isOpen={isCancelMode} bookingInfo={booking} onCancel={() => setCancelMode(false)} onConfirm={onModalConfirm} />}
         </>
     )
 }
