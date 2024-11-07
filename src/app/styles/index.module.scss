@@ -648,7 +648,7 @@
 // Testimononial 
 .testimonialContainer {
     width: 100%;
-    height: 600px;
+    min-height: 600px;
     padding: 3rem 0;
     background-color: var(--dirty-white);
     background-image: url('../assets//map.png');
@@ -657,6 +657,23 @@
 
     &>div {
         height: 100%;
+    }
+    .pageTestimonial{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        // justify-content: space-around;
+
+        .pageReviewBx{
+            width: 49% !important;
+            max-height: none;
+            height: auto;
+            margin-top: 1rem;
+            padding: 1.2rem 2rem;
+            // p {
+                
+            // }
+        }
     }
 
     .testimonialBox {
@@ -764,14 +781,14 @@
 
 //    Review Box 
 .reviewBox {
-    max-width: 550px;
-    max-height: 280px;
+    width: 100%;
+    max-height: 260px;
     background-color: var(--white);
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
     padding: 2rem 3rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     border-radius: 4px;
     font-weight: 700;
     color: #666;
@@ -779,6 +796,7 @@
     gap: 1rem;
     position: relative;
     &.homeReviewBx{
+        box-shadow: none;
         .topIcon{
             display: none;
         }    
@@ -808,10 +826,22 @@
             border : 1px solid var(--primary)
         }
         .reviewAuthor{
+            flex: 1;
             display: flex;
             flex-direction: column;
+            .authorRw{
+                display: flex;
+                justify-content: space-between;
+                span{
+                    &:nth-child(2){
+                        font-weight: 700;
+                    }
+                }
+            }
             span{
+                text-transform: capitalize;
                 &:nth-child(2){
+                    text-align: left;
                     font-weight: 400;
                 }
             }

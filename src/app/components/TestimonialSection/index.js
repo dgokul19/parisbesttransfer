@@ -1,22 +1,28 @@
 'use client'
 import { Carousel } from 'react-responsive-carousel';
 
-
 // Component
 import ReviewBox from "./ReviewBox";
+
+// Hooks
+import { useFetchRequest } from "../../hooks/useFetchApi";
+
 
 // CSS
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 import classes from "../../styles/index.module.scss";
 
-
-// Constants
-import { TESTIMONIAL_FEEDBACKS } from "../../constants/testimonial";
-
-const { content, user } = TESTIMONIAL_FEEDBACKS[0];
-
 const TestimonialSection = () => {
+
+    const { data } = useFetchRequest('testimonials');
+
+    const renderFeedbacks = () => {
+        return data.map(review => {
+            return <ReviewBox key={review.name} isHomeScreen={true} content={review?.content} user={review}/>
+        })
+    }
+
     return (
         <>
             <div className={classes.testimonialContainer}>
@@ -27,10 +33,12 @@ const TestimonialSection = () => {
                             <h3> Our Passenger Review !!</h3>
                         </div>
                         <div style={{width : '75%', height : '280px'}}>
-                            <Carousel autoPlay={true} showThumbs={false} infiniteLoop={true}>
-                                <ReviewBox isHomeScreen={true} content={content} user={user}/>
-                                <ReviewBox isHomeScreen={true} content={content} user={user}/>
-                                <ReviewBox isHomeScreen={true} content={content} user={user}/>
+                            <Carousel autoPlay={true} 
+                                showIndicators={false} 
+                                showThumbs={false}
+                                showArrows={true} 
+                                infiniteLoop={true}>
+                                {renderFeedbacks()}
                             </Carousel>
                         </div>
                     </div>

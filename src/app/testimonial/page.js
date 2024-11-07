@@ -11,8 +11,6 @@ import ReviewBox from "../components/TestimonialSection/ReviewBox";
 
 import FooterComponent from "../components/Footer";
 
-import { TESTIMONIAL_FEEDBACKS } from "../constants/testimonial";
-
 // Hooks
 import { useFetchRequest } from "../hooks/useFetchApi";
 
@@ -31,7 +29,9 @@ export default function TestimonialComponent() {
 
         <div className={classes.testimonialContainer}>
           <div className="container flex">
-              {data?.length && data.map((review,idx) => <ReviewBox key={idx.toString()} content={review.content} user={review}/>)}
+            <div className={classes.pageTestimonial}>
+              {data?.length ? data.map((review,idx) => <ReviewBox key={idx.toString()} content={review.content} user={review}/>) : null}
+            </div>
               {error && <div className="error-content">Error on loading, Please try again later !!</div>}
           </div>
         </div>
