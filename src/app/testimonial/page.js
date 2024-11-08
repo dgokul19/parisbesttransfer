@@ -21,7 +21,6 @@ export default function TestimonialComponent() {
 
   const { data, error, errorMessage } = useFetchRequest('testimonials');
 
-  console.log({data, error, errorMessage});
   return (
     <div className={classes.page}>
         <NavigationMenu />        

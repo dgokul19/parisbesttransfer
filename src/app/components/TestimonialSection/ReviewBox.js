@@ -1,3 +1,7 @@
+
+// Components
+import StarRating from "../StarRating";
+
 // CSS
 import classes from "../../styles/index.module.scss";
 
@@ -14,7 +18,10 @@ const ReviewBox = ({ content, user, isHomeScreen=false}) => {
                             <span>{user.name}</span>
                             <span>{user.date}</span>
                         </div>
-                        <span>{user.location || `Paris, France`}</span>
+                        <div className={classes.authorRw}>
+                            <span>{user.location || `Paris, France`}</span>
+                            <StarRating rating={user.stars}/>
+                        </div>
                     </div>
                 </div>
             </div>

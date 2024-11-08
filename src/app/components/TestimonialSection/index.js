@@ -32,7 +32,7 @@ const TestimonialSection = () => {
                             <h4> <span className={classes.highighter}></span> CLIENT FEEDBACKS</h4>
                             <h3> Our Passenger Review !!</h3>
                         </div>
-                        <div style={{width : '75%', height : '280px'}}>
+                        <div className={classes.carouselDiv}>
                             <Carousel autoPlay={true} 
                                 showIndicators={false} 
                                 showThumbs={false}

@@ -701,6 +701,10 @@
             margin-bottom: 2rem;
         }
     }
+    .carouselDiv{
+        width: 75%;
+        height: 280px;
+    }
     // Faq
     .faq {
         width: 30%;
@@ -1312,15 +1316,24 @@
             flex-direction: column;
             gap: 1rem;
             h3{
-                font-size: 1.5rem;
+                font-size: 1rem;
             }
+        }
+        .carouselDiv{
+            width: 100%;
+            height: auto;
         }
         .testimonialBox {
             width: 100%;
+            height: auto;
         }
         .reviewBox{
             width: 100%;
             max-height: none;
+            padding: 15px 1rem;
+            p{
+                font-size: .9rem;
+            }
         }
         .faq {
             position: static;
