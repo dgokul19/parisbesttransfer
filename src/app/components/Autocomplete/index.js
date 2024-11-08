@@ -47,7 +47,14 @@ const Autocomplete = (props) => {
 
     const renderDropdown = () => {
         if (searchValue || isOpen) {
-            let filterdKeys = searchValue ? options.filter(li => (li.label).toLowerCase().indexOf(searchValue?.toLowerCase()) > -1) : options;
+            let filterdKeys;
+            if(searchValue) {
+                filterdKeys = options.filter(li => {
+                    return ((li.label).toLowerCase().indexOf(searchValue?.toLowerCase()) > -1 || (li.label === "Custom"))
+                })
+            } else {
+                filterdKeys = options
+            }
             return (
                 <div className={classes.optionsContainer}>
                     <ul>
